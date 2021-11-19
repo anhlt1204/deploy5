@@ -37,6 +37,7 @@ public class TransactionOfCustomerMapper {
     public TransactionOfCustomer mapToTransactionRequest(TransactionOfCustomerRequest request) {
         TransactionOfCustomer transaction = new TransactionOfCustomer() ;
         transaction.setAmount(request.getAmount());
+        transaction.setMoneyRemaining(request.getMoneyRemaining());
         transaction.setCreatedAt(request.getCreatedAt());
         transaction.setStatus(request.getStatus());
         transaction.setType(request.getType());

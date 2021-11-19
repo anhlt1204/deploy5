@@ -27,6 +27,5 @@ public class WithdrawnRequest {
 
     private BigDecimal moneyRemaining ;
 
-
     private String status ;
 }

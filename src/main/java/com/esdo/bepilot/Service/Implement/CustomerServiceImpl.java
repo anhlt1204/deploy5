@@ -18,6 +18,7 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestParam;
 
 import javax.transaction.Transactional;
+import java.math.BigDecimal;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -38,6 +39,8 @@ public class CustomerServiceImpl implements CustomerService {
         customer.setCustomerKey("KH");
         customer.setMissions(new ArrayList<>());
         customer.setTransaction(new ArrayList<>());
+        customer.setMoneyRemaining(BigDecimal.ZERO);
+        customer.setMoneyAvailable(BigDecimal.ZERO);
         customerRepository.save(customer) ;
         List<Customer> customerClones = customerRepository.getCustomerClone() ;
         customerClones.get(0).setCustomerKey("KH" + customerClones.get(0).getId());

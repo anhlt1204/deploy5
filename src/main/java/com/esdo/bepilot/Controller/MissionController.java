@@ -55,6 +55,7 @@ public class MissionController {
         return ResponseEntity.ok().body(missionService.createMission(missionRequest));
     }
 
+
     @PutMapping({"/{id}"})
     public ResponseEntity<MissionResponse> updateMission(@PathVariable(value = "id") Long missionId,
                                                          @RequestBody @Valid MissionRequest missionRequest) {

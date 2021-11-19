@@ -95,6 +95,7 @@ public class MissionMapper {
         missionResponse.setPriceUnit(mission.getPriceUnit());
         missionResponse.setQuantity(mission.getQuantity());
         missionResponse.setQuantityMade(mission.getQuantityMade());
+        missionResponse.setStatus(mission.getStatus());
         if(!Objects.isNull(mission.getCustomer().getName())) {
             missionResponse.setCustomerName(mission.getCustomer().getName());
         }
