@@ -1,8 +1,6 @@
 package com.esdo.bepilot.Model.Request;
 
-import lombok.AllArgsConstructor;
-import lombok.Data;
-import lombok.NoArgsConstructor;
+import lombok.*;
 import org.hibernate.annotations.UpdateTimestamp;
 import org.springframework.data.annotation.CreatedDate;
 import org.springframework.data.annotation.LastModifiedDate;
@@ -10,14 +8,12 @@ import org.springframework.data.annotation.LastModifiedDate;
 import javax.persistence.Column;
 import java.time.OffsetDateTime;
 
-@Data
+@Getter
+@Setter
 @NoArgsConstructor
 @AllArgsConstructor
 public class MissionDetailRequest {
-    private Long id;
     private Long missionId;
     private Long userId;
     private String status;
-    private OffsetDateTime createAt;
-    private OffsetDateTime updateAt;
 }

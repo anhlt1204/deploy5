@@ -71,7 +71,7 @@ public class Mission {
     private String status;
 
     @ManyToOne(fetch = FetchType.LAZY)
-    @JoinColumn(name = "customer_id",referencedColumnName = "id", insertable = false, updatable = false)
+    @JoinColumn(name = "customer_id",referencedColumnName = "id")
     @JsonIgnore
     private Customer customer;
 

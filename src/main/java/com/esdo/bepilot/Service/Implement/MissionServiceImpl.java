@@ -1,5 +1,6 @@
 package com.esdo.bepilot.Service.Implement;
 
+import com.esdo.bepilot.Config.EmployeeSpecification;
 import com.esdo.bepilot.Exception.CustomException;
 import com.esdo.bepilot.Exception.InvalidException;
 import com.esdo.bepilot.Model.Entity.Customer;
@@ -22,6 +23,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.PageRequest;
 import org.springframework.data.domain.Pageable;
+import org.springframework.data.domain.Sort;
 import org.springframework.stereotype.Service;
 
 import javax.transaction.Transactional;
@@ -48,14 +50,13 @@ public class MissionServiceImpl implements MissionService {
 
 
     /**
-     *
      * @param id
      * @return
      */
     public MissionResponse getById(Long id) {
-        Optional<Mission> mission = missionRepository.findById(id) ;
-        MissionResponse missionResponse =  missionMapper.mapToMissionResponse(mission.get()) ;
-        return missionResponse ;
+        Optional<Mission> mission = missionRepository.findById(id);
+        MissionResponse missionResponse = missionMapper.mapToMissionResponse(mission.get());
+        return missionResponse;
     }
 
     /**
@@ -66,11 +67,12 @@ public class MissionServiceImpl implements MissionService {
      * @return
      */
     @Override
-    public ListMissionResponse getListMission(int pageIndex, int pageSize) {
+    public ListMissionResponse getListMission(Integer pageIndex, Integer pageSize) {
         ListMissionResponse response = new ListMissionResponse();
 
-        Pageable paging = PageRequest.of(pageIndex, pageSize);
+        Pageable paging = PageRequest.of(pageIndex - 1, pageSize, Sort.by("id"));
         Page<Mission> page = missionRepository.findAll(paging);
+
         List<Mission> missions = page.getContent();
 
         List<MissionResponse> missionResponseList = new ArrayList<>();
@@ -79,10 +81,10 @@ public class MissionServiceImpl implements MissionService {
         }
 
         response.setMissionResponseList(missionResponseList);
-        response.setPage(pageIndex);
-        response.setSize(pageSize);
+        response.setPage(3);
+        response.setSize(5);
         response.setTotalPages(page.getTotalPages());
-        response.setTotalItems(Math.toIntExact(page.getTotalElements()));
+        response.setTotalItems((int) page.getTotalElements());
         return response;
     }
 
@@ -98,14 +100,15 @@ public class MissionServiceImpl implements MissionService {
         missionValidate.validate(missionRequest);
 
         Mission mission = missionMapper.mapToMission(missionRequest);
+
         missionRepository.save(mission);
 
-        List<Mission> missions = missionRepository.getMissionKey();
-        missions.get(0).setMissionKey("NV" + missions.get(0).getId());
+        Mission missions = missionRepository.getMissionKey();
+        missions.setMissionKey("NV" + missions.getId());
 
-        Mission missionCreated = missionRepository.save(missions.get(0));
+        Mission missionCreated = missionRepository.save(missions);
 
-        return missionMapper.mapToMissionResponse(missionCreated);
+       return missionMapper.mapToMissionResponse(missionCreated);
     }
 
 

@@ -1,8 +1,9 @@
 package com.esdo.bepilot.Controller;
 
+import com.esdo.bepilot.Model.Request.MissionDetailRequest;
 import com.esdo.bepilot.Model.Request.TransactionOfCustomerRequest;
-import com.esdo.bepilot.Model.Request.UserRequest;
 import com.esdo.bepilot.Service.Implement.TransactionServiceImpl;
+import com.esdo.bepilot.Service.MissionDetailService;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
@@ -11,15 +12,15 @@ import org.springframework.web.bind.annotation.*;
 @Slf4j
 @RequestMapping("/api/v1")
 @CrossOrigin
-public class TransactionController {
+public class MissionDetailController {
 
     @Autowired
-    TransactionServiceImpl transactionService ;
+    MissionDetailService missionDetailService ;
 
-    @PostMapping(value = "/transactions/add")
-    public String createUser(@RequestBody TransactionOfCustomerRequest request) {
-        log.info("Inside createUser of TransactionController ");
-        transactionService.create(request);
+    @PostMapping(value = "/missiondetails/add")
+    public String createUser(@RequestBody MissionDetailRequest request) {
+        log.info("Inside createUser of MissionDetailController ");
+        missionDetailService.create(request);
         return "Created Complete";
     }
 }

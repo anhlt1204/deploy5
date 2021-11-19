@@ -16,5 +16,5 @@ public interface MissionRepository extends JpaRepository<Mission,Long>, JpaSpeci
     List<MissionResponse> findByStatus(String status,Long customerId);
 
     @Query(value = "SELECT * from mission u ORDER BY u.id DESC limit 1", nativeQuery = true)
-    List<Mission> getMissionKey() ;
+    Mission getMissionKey() ;
 }

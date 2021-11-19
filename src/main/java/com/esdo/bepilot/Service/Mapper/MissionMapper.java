@@ -96,12 +96,8 @@ public class MissionMapper {
         missionResponse.setQuantity(mission.getQuantity());
         missionResponse.setQuantityMade(mission.getQuantityMade());
         missionResponse.setStatus(mission.getStatus());
-        if(!Objects.isNull(mission.getCustomer().getName())) {
-            missionResponse.setCustomerName(mission.getCustomer().getName());
-        }
-        if(!Objects.isNull(mission.getCustomer().getCompanyName())) {
-            missionResponse.setCompanyName(mission.getCustomer().getCompanyName());
-        }
+        missionResponse.setCustomerName(mission.getCustomer().getName());
+        missionResponse.setCompanyName(mission.getCustomer().getCompanyName());
         missionResponse.setMissionDetails(missionDetailMapper.mapToListMissionDetail(mission.getMissionDetails()));
         return missionResponse;
     }

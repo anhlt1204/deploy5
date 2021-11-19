@@ -1,12 +1,14 @@
 package com.esdo.bepilot.Service.Implement;
 
-import com.esdo.bepilot.Model.Entity.Customer;
-import com.esdo.bepilot.Model.Entity.MissionDetail;
-import com.esdo.bepilot.Model.Entity.MissionDetailGroupByDay;
+import com.esdo.bepilot.Model.Entity.*;
+import com.esdo.bepilot.Model.Request.MissionDetailRequest;
 import com.esdo.bepilot.Model.Response.CustomerResponse;
 import com.esdo.bepilot.Model.Response.MissionDetailResponse;
 import com.esdo.bepilot.Repository.MissionDetailRepository;
+import com.esdo.bepilot.Repository.MissionRepository;
+import com.esdo.bepilot.Repository.UserRepository;
 import com.esdo.bepilot.Service.Mapper.MissionDetailMapper;
+import com.esdo.bepilot.Service.Mapper.MissionMapper;
 import com.esdo.bepilot.Service.MissionDetailService;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -16,20 +18,36 @@ import org.springframework.data.domain.Pageable;
 import org.springframework.stereotype.Service;
 
 
+import javax.transaction.Transactional;
 import java.util.List;
 
 @Service
 @Slf4j
+@Transactional
 public class MissionDetailServiceImpl implements MissionDetailService {
 
     @Autowired
     public MissionDetailRepository missionDetailRepository ;
 
     @Autowired
+    public UserRepository userRepository ;
+
+    @Autowired
+    MissionRepository missionRepository ;
+
+    @Autowired
     public MissionDetailMapper mapper ;
 
-    public MissionDetail create(MissionDetail missionDetail){
+    public MissionDetail create(MissionDetailRequest request){
         log.info("Inside create of MissionDetail Service ");
+        MissionDetail missionDetail = mapper.mapToMissionDetailRequest(request) ;
+        User user = userRepository.findById(request.getUserId()).get() ;
+        missionDetail.setUsers(user);
+        user.getMissionDetailList().add(missionDetail) ;
+        Mission mission = missionRepository.findById(request.getMissionId()).get() ;
+        missionDetail.setMission(mission);
+        mission.getMissionDetails().add(missionDetail) ;
+        missionDetailRepository.save(missionDetail) ;
 //        missionDetailRepository.save(missionDetail) ;
         return null ;
     }

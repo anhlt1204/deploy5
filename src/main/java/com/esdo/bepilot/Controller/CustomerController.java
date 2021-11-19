@@ -98,7 +98,7 @@ public class CustomerController {
 
     @DeleteMapping(value = "/customers/delete")
     public String deleteCustomer(@RequestParam Long id) {
-        log.info("Inside updateCustomer of customerAPI ");
+        log.info("Inside deleteCustomer of customerAPI ");
         customerService.deleteCustomerById(id);
         return "Delete Completed" ;
     }
@@ -114,7 +114,7 @@ public class CustomerController {
             keyWord = "";
         }
         ResponseEntity response = new ResponseEntity();
-        log.info("Inside getAllCustomer of customerAPI ");
+        log.info("Inside searchCustomer of customerAPI ");
         List<CustomerResponse> responses = customerService.searchCustomer(pageIndex, pageSize, keyWord);
         response.setData(responses);
         response.setPage(pageIndex);

@@ -37,8 +37,8 @@ public class UserServiceImpl implements UserService {
         User user = userMapper.mapToUserRequest(request) ;
         user.setWithdrawnList(new ArrayList<>()) ;
         user.setMissionDetailList(new ArrayList<>());
-        user.setMoneyRemaining(BigDecimal.ZERO);
-        user.setMoneyWithdrawn(BigDecimal.ZERO);
+        user.setMoneyRemaining(BigDecimal.valueOf(100000));
+        user.setMoneyWithdrawn(BigDecimal.valueOf(200000));
         user.setNumberOfMissionDone(0);
         userRepository.save(user) ;
         List<User> userClones = userRepository.getUserClone() ;

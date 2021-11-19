@@ -18,7 +18,7 @@ public class WithdrawnController {
 
     @PostMapping(value = "/withdrawns/add")
     public String createUser(@RequestBody WithdrawnRequest request) {
-        log.info("Inside createUser of userAPI ");
+        log.info("Inside createUser of WithdrawnController ");
         WithdrawnService.create(request);
         return "Created Complete";
     }

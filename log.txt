@@ -799,4 +799,613 @@ Caused by: com.mysql.cj.exceptions.CJException: Access denied for user 'root'@'l
 ""2021-11-19 15:10:50 - Inside getAllCustomer of User Service 
 ""2021-11-19 15:19:11 - Inside createUser of userAPI 
 ""2021-11-19 15:19:11 - Inside create of Withdrawn Service 
+""2021-11-19 17:09:53 - Starting BePilotApplication using Java 11.0.13 on DESKTOP-88FAOV3 with PID 15264 (D:\be-pilot-project\be-pilot\target\classes started by EdsoLabs in D:\be-pilot-project\be-pilot)
+""2021-11-19 17:09:53 - No active profile set, falling back to default profiles: default
+""2021-11-19 17:09:53 - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+""2021-11-19 17:09:54 - Finished Spring Data repository scanning in 66 ms. Found 10 JPA repository interfaces.
+""2021-11-19 17:09:54 - Tomcat initialized with port(s): 8080 (http)
+""2021-11-19 17:09:54 - Starting service [Tomcat]
+""2021-11-19 17:09:54 - Starting Servlet engine: [Apache Tomcat/9.0.54]
+""2021-11-19 17:09:54 - Initializing Spring embedded WebApplicationContext
+""2021-11-19 17:09:54 - Root WebApplicationContext: initialization completed in 1122 ms
+""2021-11-19 17:09:54 - HHH000204: Processing PersistenceUnitInfo [name: default]
+""2021-11-19 17:09:54 - HHH000412: Hibernate ORM core version 5.4.32.Final
+""2021-11-19 17:09:54 - HCANN000001: Hibernate Commons Annotations {5.1.2.Final}
+""2021-11-19 17:09:54 - HikariPool-1 - Starting...
+""2021-11-19 17:09:59 - HikariPool-1 - Exception during pool initialization.
+"java.sql.SQLNonTransientConnectionException: Could not create connection to database server. Attempted reconnect 3 times. Giving up.
+	at com.mysql.cj.jdbc.exceptions.SQLError.createSQLException(SQLError.java:110)
+	at com.mysql.cj.jdbc.exceptions.SQLError.createSQLException(SQLError.java:97)
+	at com.mysql.cj.jdbc.exceptions.SQLError.createSQLException(SQLError.java:89)
+	at com.mysql.cj.jdbc.exceptions.SQLError.createSQLException(SQLError.java:63)
+	at com.mysql.cj.jdbc.exceptions.SQLError.createSQLException(SQLError.java:73)
+	at com.mysql.cj.jdbc.ConnectionImpl.connectWithRetries(ConnectionImpl.java:903)
+	at com.mysql.cj.jdbc.ConnectionImpl.createNewIO(ConnectionImpl.java:828)
+	at com.mysql.cj.jdbc.ConnectionImpl.<init>(ConnectionImpl.java:453)
+	at com.mysql.cj.jdbc.ConnectionImpl.getInstance(ConnectionImpl.java:246)
+	at com.mysql.cj.jdbc.NonRegisteringDriver.connect(NonRegisteringDriver.java:198)
+	at com.zaxxer.hikari.util.DriverDataSource.getConnection(DriverDataSource.java:138)
+	at com.zaxxer.hikari.pool.PoolBase.newConnection(PoolBase.java:364)
+	at com.zaxxer.hikari.pool.PoolBase.newPoolEntry(PoolBase.java:206)
+	at com.zaxxer.hikari.pool.HikariPool.createPoolEntry(HikariPool.java:476)
+	at com.zaxxer.hikari.pool.HikariPool.checkFailFast(HikariPool.java:561)
+	at com.zaxxer.hikari.pool.HikariPool.<init>(HikariPool.java:115)
+	at com.zaxxer.hikari.HikariDataSource.getConnection(HikariDataSource.java:112)
+	at org.hibernate.engine.jdbc.connections.internal.DatasourceConnectionProviderImpl.getConnection(DatasourceConnectionProviderImpl.java:122)
+	at org.hibernate.engine.jdbc.env.internal.JdbcEnvironmentInitiator$ConnectionProviderJdbcConnectionAccess.obtainConnection(JdbcEnvironmentInitiator.java:180)
+	at org.hibernate.engine.jdbc.env.internal.JdbcEnvironmentInitiator.initiateService(JdbcEnvironmentInitiator.java:68)
+	at org.hibernate.engine.jdbc.env.internal.JdbcEnvironmentInitiator.initiateService(JdbcEnvironmentInitiator.java:35)
+	at org.hibernate.boot.registry.internal.StandardServiceRegistryImpl.initiateService(StandardServiceRegistryImpl.java:101)
+	at org.hibernate.service.internal.AbstractServiceRegistryImpl.createService(AbstractServiceRegistryImpl.java:263)
+	at org.hibernate.service.internal.AbstractServiceRegistryImpl.initializeService(AbstractServiceRegistryImpl.java:237)
+	at org.hibernate.service.internal.AbstractServiceRegistryImpl.getService(AbstractServiceRegistryImpl.java:214)
+	at org.hibernate.id.factory.internal.DefaultIdentifierGeneratorFactory.injectServices(DefaultIdentifierGeneratorFactory.java:152)
+	at org.hibernate.service.internal.AbstractServiceRegistryImpl.injectDependencies(AbstractServiceRegistryImpl.java:286)
+	at org.hibernate.service.internal.AbstractServiceRegistryImpl.initializeService(AbstractServiceRegistryImpl.java:243)
+	at org.hibernate.service.internal.AbstractServiceRegistryImpl.getService(AbstractServiceRegistryImpl.java:214)
+	at org.hibernate.boot.internal.InFlightMetadataCollectorImpl.<init>(InFlightMetadataCollectorImpl.java:176)
+	at org.hibernate.boot.model.process.spi.MetadataBuildingProcess.complete(MetadataBuildingProcess.java:127)
+	at org.hibernate.jpa.boot.internal.EntityManagerFactoryBuilderImpl.metadata(EntityManagerFactoryBuilderImpl.java:1224)
+	at org.hibernate.jpa.boot.internal.EntityManagerFactoryBuilderImpl.build(EntityManagerFactoryBuilderImpl.java:1255)
+	at org.springframework.orm.jpa.vendor.SpringHibernateJpaPersistenceProvider.createContainerEntityManagerFactory(SpringHibernateJpaPersistenceProvider.java:58)
+	at org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean.createNativeEntityManagerFactory(LocalContainerEntityManagerFactoryBean.java:365)
+	at org.springframework.orm.jpa.AbstractEntityManagerFactoryBean.buildNativeEntityManagerFactory(AbstractEntityManagerFactoryBean.java:409)
+	at org.springframework.orm.jpa.AbstractEntityManagerFactoryBean.afterPropertiesSet(AbstractEntityManagerFactoryBean.java:396)
+	at org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean.afterPropertiesSet(LocalContainerEntityManagerFactoryBean.java:341)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.invokeInitMethods(AbstractAutowireCapableBeanFactory.java:1863)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.initializeBean(AbstractAutowireCapableBeanFactory.java:1800)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:620)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:542)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:335)
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:234)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:333)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:208)
+	at org.springframework.context.support.AbstractApplicationContext.getBean(AbstractApplicationContext.java:1154)
+	at org.springframework.context.support.AbstractApplicationContext.finishBeanFactoryInitialization(AbstractApplicationContext.java:908)
+	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:583)
+	at org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext.refresh(ServletWebServerApplicationContext.java:145)
+	at org.springframework.boot.SpringApplication.refresh(SpringApplication.java:754)
+	at org.springframework.boot.SpringApplication.refreshContext(SpringApplication.java:434)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:338)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1343)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1332)
+	at com.esdo.bepilot.BePilotApplication.main(BePilotApplication.java:10)
+Caused by: com.mysql.cj.exceptions.CJException: Public Key Retrieval is not allowed
+	at java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
+	at java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:62)
+	at java.base/jdk.internal.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)
+	at java.base/java.lang.reflect.Constructor.newInstance(Constructor.java:490)
+	at com.mysql.cj.exceptions.ExceptionFactory.createException(ExceptionFactory.java:61)
+	at com.mysql.cj.exceptions.ExceptionFactory.createException(ExceptionFactory.java:105)
+	at com.mysql.cj.exceptions.ExceptionFactory.createException(ExceptionFactory.java:151)
+	at com.mysql.cj.exceptions.ExceptionFactory.createException(ExceptionFactory.java:124)
+	at com.mysql.cj.protocol.a.authentication.CachingSha2PasswordPlugin.nextAuthenticationStep(CachingSha2PasswordPlugin.java:151)
+	at com.mysql.cj.protocol.a.authentication.CachingSha2PasswordPlugin.nextAuthenticationStep(CachingSha2PasswordPlugin.java:49)
+	at com.mysql.cj.protocol.a.NativeAuthenticationProvider.proceedHandshakeWithPluggableAuthentication(NativeAuthenticationProvider.java:432)
+	at com.mysql.cj.protocol.a.NativeAuthenticationProvider.connect(NativeAuthenticationProvider.java:210)
+	at com.mysql.cj.protocol.a.NativeProtocol.connect(NativeProtocol.java:1353)
+	at com.mysql.cj.NativeSession.connect(NativeSession.java:157)
+	at com.mysql.cj.jdbc.ConnectionImpl.connectWithRetries(ConnectionImpl.java:847)
+	... 50 common frames omitted
+Caused by: com.mysql.cj.exceptions.UnableToConnectException: Public Key Retrieval is not allowed
+	at java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
+	at java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:62)
+	at java.base/jdk.internal.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)
+	at java.base/java.lang.reflect.Constructor.newInstance(Constructor.java:490)
+	at com.mysql.cj.exceptions.ExceptionFactory.createException(ExceptionFactory.java:61)
+	at com.mysql.cj.exceptions.ExceptionFactory.createException(ExceptionFactory.java:85)
+	at com.mysql.cj.protocol.a.authentication.CachingSha2PasswordPlugin.nextAuthenticationStep(CachingSha2PasswordPlugin.java:128)
+	... 56 common frames omitted
+"2021-11-19 17:09:59 - HHH000342: Could not obtain connection to query metadata
+"java.sql.SQLNonTransientConnectionException: Could not create connection to database server. Attempted reconnect 3 times. Giving up.
+	at com.mysql.cj.jdbc.exceptions.SQLError.createSQLException(SQLError.java:110)
+	at com.mysql.cj.jdbc.exceptions.SQLError.createSQLException(SQLError.java:97)
+	at com.mysql.cj.jdbc.exceptions.SQLError.createSQLException(SQLError.java:89)
+	at com.mysql.cj.jdbc.exceptions.SQLError.createSQLException(SQLError.java:63)
+	at com.mysql.cj.jdbc.exceptions.SQLError.createSQLException(SQLError.java:73)
+	at com.mysql.cj.jdbc.ConnectionImpl.connectWithRetries(ConnectionImpl.java:903)
+	at com.mysql.cj.jdbc.ConnectionImpl.createNewIO(ConnectionImpl.java:828)
+	at com.mysql.cj.jdbc.ConnectionImpl.<init>(ConnectionImpl.java:453)
+	at com.mysql.cj.jdbc.ConnectionImpl.getInstance(ConnectionImpl.java:246)
+	at com.mysql.cj.jdbc.NonRegisteringDriver.connect(NonRegisteringDriver.java:198)
+	at com.zaxxer.hikari.util.DriverDataSource.getConnection(DriverDataSource.java:138)
+	at com.zaxxer.hikari.pool.PoolBase.newConnection(PoolBase.java:364)
+	at com.zaxxer.hikari.pool.PoolBase.newPoolEntry(PoolBase.java:206)
+	at com.zaxxer.hikari.pool.HikariPool.createPoolEntry(HikariPool.java:476)
+	at com.zaxxer.hikari.pool.HikariPool.checkFailFast(HikariPool.java:561)
+	at com.zaxxer.hikari.pool.HikariPool.<init>(HikariPool.java:115)
+	at com.zaxxer.hikari.HikariDataSource.getConnection(HikariDataSource.java:112)
+	at org.hibernate.engine.jdbc.connections.internal.DatasourceConnectionProviderImpl.getConnection(DatasourceConnectionProviderImpl.java:122)
+	at org.hibernate.engine.jdbc.env.internal.JdbcEnvironmentInitiator$ConnectionProviderJdbcConnectionAccess.obtainConnection(JdbcEnvironmentInitiator.java:180)
+	at org.hibernate.engine.jdbc.env.internal.JdbcEnvironmentInitiator.initiateService(JdbcEnvironmentInitiator.java:68)
+	at org.hibernate.engine.jdbc.env.internal.JdbcEnvironmentInitiator.initiateService(JdbcEnvironmentInitiator.java:35)
+	at org.hibernate.boot.registry.internal.StandardServiceRegistryImpl.initiateService(StandardServiceRegistryImpl.java:101)
+	at org.hibernate.service.internal.AbstractServiceRegistryImpl.createService(AbstractServiceRegistryImpl.java:263)
+	at org.hibernate.service.internal.AbstractServiceRegistryImpl.initializeService(AbstractServiceRegistryImpl.java:237)
+	at org.hibernate.service.internal.AbstractServiceRegistryImpl.getService(AbstractServiceRegistryImpl.java:214)
+	at org.hibernate.id.factory.internal.DefaultIdentifierGeneratorFactory.injectServices(DefaultIdentifierGeneratorFactory.java:152)
+	at org.hibernate.service.internal.AbstractServiceRegistryImpl.injectDependencies(AbstractServiceRegistryImpl.java:286)
+	at org.hibernate.service.internal.AbstractServiceRegistryImpl.initializeService(AbstractServiceRegistryImpl.java:243)
+	at org.hibernate.service.internal.AbstractServiceRegistryImpl.getService(AbstractServiceRegistryImpl.java:214)
+	at org.hibernate.boot.internal.InFlightMetadataCollectorImpl.<init>(InFlightMetadataCollectorImpl.java:176)
+	at org.hibernate.boot.model.process.spi.MetadataBuildingProcess.complete(MetadataBuildingProcess.java:127)
+	at org.hibernate.jpa.boot.internal.EntityManagerFactoryBuilderImpl.metadata(EntityManagerFactoryBuilderImpl.java:1224)
+	at org.hibernate.jpa.boot.internal.EntityManagerFactoryBuilderImpl.build(EntityManagerFactoryBuilderImpl.java:1255)
+	at org.springframework.orm.jpa.vendor.SpringHibernateJpaPersistenceProvider.createContainerEntityManagerFactory(SpringHibernateJpaPersistenceProvider.java:58)
+	at org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean.createNativeEntityManagerFactory(LocalContainerEntityManagerFactoryBean.java:365)
+	at org.springframework.orm.jpa.AbstractEntityManagerFactoryBean.buildNativeEntityManagerFactory(AbstractEntityManagerFactoryBean.java:409)
+	at org.springframework.orm.jpa.AbstractEntityManagerFactoryBean.afterPropertiesSet(AbstractEntityManagerFactoryBean.java:396)
+	at org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean.afterPropertiesSet(LocalContainerEntityManagerFactoryBean.java:341)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.invokeInitMethods(AbstractAutowireCapableBeanFactory.java:1863)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.initializeBean(AbstractAutowireCapableBeanFactory.java:1800)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:620)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:542)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:335)
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:234)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:333)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:208)
+	at org.springframework.context.support.AbstractApplicationContext.getBean(AbstractApplicationContext.java:1154)
+	at org.springframework.context.support.AbstractApplicationContext.finishBeanFactoryInitialization(AbstractApplicationContext.java:908)
+	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:583)
+	at org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext.refresh(ServletWebServerApplicationContext.java:145)
+	at org.springframework.boot.SpringApplication.refresh(SpringApplication.java:754)
+	at org.springframework.boot.SpringApplication.refreshContext(SpringApplication.java:434)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:338)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1343)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1332)
+	at com.esdo.bepilot.BePilotApplication.main(BePilotApplication.java:10)
+Caused by: com.mysql.cj.exceptions.CJException: Public Key Retrieval is not allowed
+	at java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
+	at java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:62)
+	at java.base/jdk.internal.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)
+	at java.base/java.lang.reflect.Constructor.newInstance(Constructor.java:490)
+	at com.mysql.cj.exceptions.ExceptionFactory.createException(ExceptionFactory.java:61)
+	at com.mysql.cj.exceptions.ExceptionFactory.createException(ExceptionFactory.java:105)
+	at com.mysql.cj.exceptions.ExceptionFactory.createException(ExceptionFactory.java:151)
+	at com.mysql.cj.exceptions.ExceptionFactory.createException(ExceptionFactory.java:124)
+	at com.mysql.cj.protocol.a.authentication.CachingSha2PasswordPlugin.nextAuthenticationStep(CachingSha2PasswordPlugin.java:151)
+	at com.mysql.cj.protocol.a.authentication.CachingSha2PasswordPlugin.nextAuthenticationStep(CachingSha2PasswordPlugin.java:49)
+	at com.mysql.cj.protocol.a.NativeAuthenticationProvider.proceedHandshakeWithPluggableAuthentication(NativeAuthenticationProvider.java:432)
+	at com.mysql.cj.protocol.a.NativeAuthenticationProvider.connect(NativeAuthenticationProvider.java:210)
+	at com.mysql.cj.protocol.a.NativeProtocol.connect(NativeProtocol.java:1353)
+	at com.mysql.cj.NativeSession.connect(NativeSession.java:157)
+	at com.mysql.cj.jdbc.ConnectionImpl.connectWithRetries(ConnectionImpl.java:847)
+	... 50 common frames omitted
+Caused by: com.mysql.cj.exceptions.UnableToConnectException: Public Key Retrieval is not allowed
+	at java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
+	at java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:62)
+	at java.base/jdk.internal.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)
+	at java.base/java.lang.reflect.Constructor.newInstance(Constructor.java:490)
+	at com.mysql.cj.exceptions.ExceptionFactory.createException(ExceptionFactory.java:61)
+	at com.mysql.cj.exceptions.ExceptionFactory.createException(ExceptionFactory.java:85)
+	at com.mysql.cj.protocol.a.authentication.CachingSha2PasswordPlugin.nextAuthenticationStep(CachingSha2PasswordPlugin.java:128)
+	... 56 common frames omitted
+"2021-11-19 17:09:59 - HHH000400: Using dialect: org.hibernate.dialect.MySQL5Dialect
+""2021-11-19 17:10:00 - HikariPool-1 - Starting...
+""2021-11-19 17:10:05 - HikariPool-1 - Exception during pool initialization.
+"java.sql.SQLNonTransientConnectionException: Could not create connection to database server. Attempted reconnect 3 times. Giving up.
+	at com.mysql.cj.jdbc.exceptions.SQLError.createSQLException(SQLError.java:110)
+	at com.mysql.cj.jdbc.exceptions.SQLError.createSQLException(SQLError.java:97)
+	at com.mysql.cj.jdbc.exceptions.SQLError.createSQLException(SQLError.java:89)
+	at com.mysql.cj.jdbc.exceptions.SQLError.createSQLException(SQLError.java:63)
+	at com.mysql.cj.jdbc.exceptions.SQLError.createSQLException(SQLError.java:73)
+	at com.mysql.cj.jdbc.ConnectionImpl.connectWithRetries(ConnectionImpl.java:903)
+	at com.mysql.cj.jdbc.ConnectionImpl.createNewIO(ConnectionImpl.java:828)
+	at com.mysql.cj.jdbc.ConnectionImpl.<init>(ConnectionImpl.java:453)
+	at com.mysql.cj.jdbc.ConnectionImpl.getInstance(ConnectionImpl.java:246)
+	at com.mysql.cj.jdbc.NonRegisteringDriver.connect(NonRegisteringDriver.java:198)
+	at com.zaxxer.hikari.util.DriverDataSource.getConnection(DriverDataSource.java:138)
+	at com.zaxxer.hikari.pool.PoolBase.newConnection(PoolBase.java:364)
+	at com.zaxxer.hikari.pool.PoolBase.newPoolEntry(PoolBase.java:206)
+	at com.zaxxer.hikari.pool.HikariPool.createPoolEntry(HikariPool.java:476)
+	at com.zaxxer.hikari.pool.HikariPool.checkFailFast(HikariPool.java:561)
+	at com.zaxxer.hikari.pool.HikariPool.<init>(HikariPool.java:115)
+	at com.zaxxer.hikari.HikariDataSource.getConnection(HikariDataSource.java:112)
+	at org.hibernate.engine.jdbc.connections.internal.DatasourceConnectionProviderImpl.getConnection(DatasourceConnectionProviderImpl.java:122)
+	at org.hibernate.engine.jdbc.env.internal.JdbcEnvironmentInitiator$ConnectionProviderJdbcConnectionAccess.obtainConnection(JdbcEnvironmentInitiator.java:180)
+	at org.hibernate.resource.transaction.backend.jdbc.internal.DdlTransactionIsolatorNonJtaImpl.getIsolatedConnection(DdlTransactionIsolatorNonJtaImpl.java:43)
+	at org.hibernate.tool.schema.internal.exec.ImprovedExtractionContextImpl.getJdbcConnection(ImprovedExtractionContextImpl.java:60)
+	at org.hibernate.tool.schema.internal.exec.ImprovedExtractionContextImpl.getJdbcDatabaseMetaData(ImprovedExtractionContextImpl.java:67)
+	at org.hibernate.tool.schema.extract.internal.InformationExtractorJdbcDatabaseMetaDataImpl.getTables(InformationExtractorJdbcDatabaseMetaDataImpl.java:333)
+	at org.hibernate.tool.schema.extract.internal.DatabaseInformationImpl.getTablesInformation(DatabaseInformationImpl.java:120)
+	at org.hibernate.tool.schema.internal.GroupedSchemaMigratorImpl.performTablesMigration(GroupedSchemaMigratorImpl.java:65)
+	at org.hibernate.tool.schema.internal.AbstractSchemaMigrator.performMigration(AbstractSchemaMigrator.java:207)
+	at org.hibernate.tool.schema.internal.AbstractSchemaMigrator.doMigration(AbstractSchemaMigrator.java:114)
+	at org.hibernate.tool.schema.spi.SchemaManagementToolCoordinator.performDatabaseAction(SchemaManagementToolCoordinator.java:184)
+	at org.hibernate.tool.schema.spi.SchemaManagementToolCoordinator.process(SchemaManagementToolCoordinator.java:73)
+	at org.hibernate.internal.SessionFactoryImpl.<init>(SessionFactoryImpl.java:318)
+	at org.hibernate.boot.internal.SessionFactoryBuilderImpl.build(SessionFactoryBuilderImpl.java:468)
+	at org.hibernate.jpa.boot.internal.EntityManagerFactoryBuilderImpl.build(EntityManagerFactoryBuilderImpl.java:1259)
+	at org.springframework.orm.jpa.vendor.SpringHibernateJpaPersistenceProvider.createContainerEntityManagerFactory(SpringHibernateJpaPersistenceProvider.java:58)
+	at org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean.createNativeEntityManagerFactory(LocalContainerEntityManagerFactoryBean.java:365)
+	at org.springframework.orm.jpa.AbstractEntityManagerFactoryBean.buildNativeEntityManagerFactory(AbstractEntityManagerFactoryBean.java:409)
+	at org.springframework.orm.jpa.AbstractEntityManagerFactoryBean.afterPropertiesSet(AbstractEntityManagerFactoryBean.java:396)
+	at org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean.afterPropertiesSet(LocalContainerEntityManagerFactoryBean.java:341)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.invokeInitMethods(AbstractAutowireCapableBeanFactory.java:1863)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.initializeBean(AbstractAutowireCapableBeanFactory.java:1800)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:620)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:542)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:335)
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:234)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:333)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:208)
+	at org.springframework.context.support.AbstractApplicationContext.getBean(AbstractApplicationContext.java:1154)
+	at org.springframework.context.support.AbstractApplicationContext.finishBeanFactoryInitialization(AbstractApplicationContext.java:908)
+	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:583)
+	at org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext.refresh(ServletWebServerApplicationContext.java:145)
+	at org.springframework.boot.SpringApplication.refresh(SpringApplication.java:754)
+	at org.springframework.boot.SpringApplication.refreshContext(SpringApplication.java:434)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:338)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1343)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1332)
+	at com.esdo.bepilot.BePilotApplication.main(BePilotApplication.java:10)
+Caused by: com.mysql.cj.exceptions.CJException: Public Key Retrieval is not allowed
+	at java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
+	at java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:62)
+	at java.base/jdk.internal.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)
+	at java.base/java.lang.reflect.Constructor.newInstance(Constructor.java:490)
+	at com.mysql.cj.exceptions.ExceptionFactory.createException(ExceptionFactory.java:61)
+	at com.mysql.cj.exceptions.ExceptionFactory.createException(ExceptionFactory.java:105)
+	at com.mysql.cj.exceptions.ExceptionFactory.createException(ExceptionFactory.java:151)
+	at com.mysql.cj.exceptions.ExceptionFactory.createException(ExceptionFactory.java:124)
+	at com.mysql.cj.protocol.a.authentication.CachingSha2PasswordPlugin.nextAuthenticationStep(CachingSha2PasswordPlugin.java:151)
+	at com.mysql.cj.protocol.a.authentication.CachingSha2PasswordPlugin.nextAuthenticationStep(CachingSha2PasswordPlugin.java:49)
+	at com.mysql.cj.protocol.a.NativeAuthenticationProvider.proceedHandshakeWithPluggableAuthentication(NativeAuthenticationProvider.java:432)
+	at com.mysql.cj.protocol.a.NativeAuthenticationProvider.connect(NativeAuthenticationProvider.java:210)
+	at com.mysql.cj.protocol.a.NativeProtocol.connect(NativeProtocol.java:1353)
+	at com.mysql.cj.NativeSession.connect(NativeSession.java:157)
+	at com.mysql.cj.jdbc.ConnectionImpl.connectWithRetries(ConnectionImpl.java:847)
+	... 49 common frames omitted
+Caused by: com.mysql.cj.exceptions.UnableToConnectException: Public Key Retrieval is not allowed
+	at java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
+	at java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:62)
+	at java.base/jdk.internal.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)
+	at java.base/java.lang.reflect.Constructor.newInstance(Constructor.java:490)
+	at com.mysql.cj.exceptions.ExceptionFactory.createException(ExceptionFactory.java:61)
+	at com.mysql.cj.exceptions.ExceptionFactory.createException(ExceptionFactory.java:85)
+	at com.mysql.cj.protocol.a.authentication.CachingSha2PasswordPlugin.nextAuthenticationStep(CachingSha2PasswordPlugin.java:128)
+	... 55 common frames omitted
+"2021-11-19 17:10:05 - SQL Error: 0, SQLState: 08001
+""2021-11-19 17:10:05 - Could not create connection to database server. Attempted reconnect 3 times. Giving up.
+""2021-11-19 17:10:05 - Failed to initialize JPA EntityManagerFactory: [PersistenceUnit: default] Unable to build Hibernate SessionFactory; nested exception is org.hibernate.exception.JDBCConnectionException: Unable to open JDBC Connection for DDL execution
+""2021-11-19 17:10:05 - Exception encountered during context initialization - cancelling refresh attempt: org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'entityManagerFactory' defined in class path resource [org/springframework/boot/autoconfigure/orm/jpa/HibernateJpaConfiguration.class]: Invocation of init method failed; nested exception is javax.persistence.PersistenceException: [PersistenceUnit: default] Unable to build Hibernate SessionFactory; nested exception is org.hibernate.exception.JDBCConnectionException: Unable to open JDBC Connection for DDL execution
+""2021-11-19 17:10:05 - Stopping service [Tomcat]
+""2021-11-19 17:10:05 - 
+
+Error starting ApplicationContext. To display the conditions report re-run your application with 'debug' enabled.
+""2021-11-19 17:10:05 - Application run failed
+"org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'entityManagerFactory' defined in class path resource [org/springframework/boot/autoconfigure/orm/jpa/HibernateJpaConfiguration.class]: Invocation of init method failed; nested exception is javax.persistence.PersistenceException: [PersistenceUnit: default] Unable to build Hibernate SessionFactory; nested exception is org.hibernate.exception.JDBCConnectionException: Unable to open JDBC Connection for DDL execution
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.initializeBean(AbstractAutowireCapableBeanFactory.java:1804)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:620)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:542)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:335)
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:234)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:333)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:208)
+	at org.springframework.context.support.AbstractApplicationContext.getBean(AbstractApplicationContext.java:1154)
+	at org.springframework.context.support.AbstractApplicationContext.finishBeanFactoryInitialization(AbstractApplicationContext.java:908)
+	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:583)
+	at org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext.refresh(ServletWebServerApplicationContext.java:145)
+	at org.springframework.boot.SpringApplication.refresh(SpringApplication.java:754)
+	at org.springframework.boot.SpringApplication.refreshContext(SpringApplication.java:434)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:338)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1343)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1332)
+	at com.esdo.bepilot.BePilotApplication.main(BePilotApplication.java:10)
+Caused by: javax.persistence.PersistenceException: [PersistenceUnit: default] Unable to build Hibernate SessionFactory; nested exception is org.hibernate.exception.JDBCConnectionException: Unable to open JDBC Connection for DDL execution
+	at org.springframework.orm.jpa.AbstractEntityManagerFactoryBean.buildNativeEntityManagerFactory(AbstractEntityManagerFactoryBean.java:421)
+	at org.springframework.orm.jpa.AbstractEntityManagerFactoryBean.afterPropertiesSet(AbstractEntityManagerFactoryBean.java:396)
+	at org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean.afterPropertiesSet(LocalContainerEntityManagerFactoryBean.java:341)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.invokeInitMethods(AbstractAutowireCapableBeanFactory.java:1863)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.initializeBean(AbstractAutowireCapableBeanFactory.java:1800)
+	... 16 common frames omitted
+Caused by: org.hibernate.exception.JDBCConnectionException: Unable to open JDBC Connection for DDL execution
+	at org.hibernate.exception.internal.SQLExceptionTypeDelegate.convert(SQLExceptionTypeDelegate.java:48)
+	at org.hibernate.exception.internal.StandardSQLExceptionConverter.convert(StandardSQLExceptionConverter.java:42)
+	at org.hibernate.engine.jdbc.spi.SqlExceptionHelper.convert(SqlExceptionHelper.java:113)
+	at org.hibernate.engine.jdbc.spi.SqlExceptionHelper.convert(SqlExceptionHelper.java:99)
+	at org.hibernate.resource.transaction.backend.jdbc.internal.DdlTransactionIsolatorNonJtaImpl.getIsolatedConnection(DdlTransactionIsolatorNonJtaImpl.java:69)
+	at org.hibernate.tool.schema.internal.exec.ImprovedExtractionContextImpl.getJdbcConnection(ImprovedExtractionContextImpl.java:60)
+	at org.hibernate.tool.schema.internal.exec.ImprovedExtractionContextImpl.getJdbcDatabaseMetaData(ImprovedExtractionContextImpl.java:67)
+	at org.hibernate.tool.schema.extract.internal.InformationExtractorJdbcDatabaseMetaDataImpl.getTables(InformationExtractorJdbcDatabaseMetaDataImpl.java:333)
+	at org.hibernate.tool.schema.extract.internal.DatabaseInformationImpl.getTablesInformation(DatabaseInformationImpl.java:120)
+	at org.hibernate.tool.schema.internal.GroupedSchemaMigratorImpl.performTablesMigration(GroupedSchemaMigratorImpl.java:65)
+	at org.hibernate.tool.schema.internal.AbstractSchemaMigrator.performMigration(AbstractSchemaMigrator.java:207)
+	at org.hibernate.tool.schema.internal.AbstractSchemaMigrator.doMigration(AbstractSchemaMigrator.java:114)
+	at org.hibernate.tool.schema.spi.SchemaManagementToolCoordinator.performDatabaseAction(SchemaManagementToolCoordinator.java:184)
+	at org.hibernate.tool.schema.spi.SchemaManagementToolCoordinator.process(SchemaManagementToolCoordinator.java:73)
+	at org.hibernate.internal.SessionFactoryImpl.<init>(SessionFactoryImpl.java:318)
+	at org.hibernate.boot.internal.SessionFactoryBuilderImpl.build(SessionFactoryBuilderImpl.java:468)
+	at org.hibernate.jpa.boot.internal.EntityManagerFactoryBuilderImpl.build(EntityManagerFactoryBuilderImpl.java:1259)
+	at org.springframework.orm.jpa.vendor.SpringHibernateJpaPersistenceProvider.createContainerEntityManagerFactory(SpringHibernateJpaPersistenceProvider.java:58)
+	at org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean.createNativeEntityManagerFactory(LocalContainerEntityManagerFactoryBean.java:365)
+	at org.springframework.orm.jpa.AbstractEntityManagerFactoryBean.buildNativeEntityManagerFactory(AbstractEntityManagerFactoryBean.java:409)
+	... 20 common frames omitted
+Caused by: java.sql.SQLNonTransientConnectionException: Could not create connection to database server. Attempted reconnect 3 times. Giving up.
+	at com.mysql.cj.jdbc.exceptions.SQLError.createSQLException(SQLError.java:110)
+	at com.mysql.cj.jdbc.exceptions.SQLError.createSQLException(SQLError.java:97)
+	at com.mysql.cj.jdbc.exceptions.SQLError.createSQLException(SQLError.java:89)
+	at com.mysql.cj.jdbc.exceptions.SQLError.createSQLException(SQLError.java:63)
+	at com.mysql.cj.jdbc.exceptions.SQLError.createSQLException(SQLError.java:73)
+	at com.mysql.cj.jdbc.ConnectionImpl.connectWithRetries(ConnectionImpl.java:903)
+	at com.mysql.cj.jdbc.ConnectionImpl.createNewIO(ConnectionImpl.java:828)
+	at com.mysql.cj.jdbc.ConnectionImpl.<init>(ConnectionImpl.java:453)
+	at com.mysql.cj.jdbc.ConnectionImpl.getInstance(ConnectionImpl.java:246)
+	at com.mysql.cj.jdbc.NonRegisteringDriver.connect(NonRegisteringDriver.java:198)
+	at com.zaxxer.hikari.util.DriverDataSource.getConnection(DriverDataSource.java:138)
+	at com.zaxxer.hikari.pool.PoolBase.newConnection(PoolBase.java:364)
+	at com.zaxxer.hikari.pool.PoolBase.newPoolEntry(PoolBase.java:206)
+	at com.zaxxer.hikari.pool.HikariPool.createPoolEntry(HikariPool.java:476)
+	at com.zaxxer.hikari.pool.HikariPool.checkFailFast(HikariPool.java:561)
+	at com.zaxxer.hikari.pool.HikariPool.<init>(HikariPool.java:115)
+	at com.zaxxer.hikari.HikariDataSource.getConnection(HikariDataSource.java:112)
+	at org.hibernate.engine.jdbc.connections.internal.DatasourceConnectionProviderImpl.getConnection(DatasourceConnectionProviderImpl.java:122)
+	at org.hibernate.engine.jdbc.env.internal.JdbcEnvironmentInitiator$ConnectionProviderJdbcConnectionAccess.obtainConnection(JdbcEnvironmentInitiator.java:180)
+	at org.hibernate.resource.transaction.backend.jdbc.internal.DdlTransactionIsolatorNonJtaImpl.getIsolatedConnection(DdlTransactionIsolatorNonJtaImpl.java:43)
+	... 35 common frames omitted
+Caused by: com.mysql.cj.exceptions.CJException: Public Key Retrieval is not allowed
+	at java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
+	at java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:62)
+	at java.base/jdk.internal.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)
+	at java.base/java.lang.reflect.Constructor.newInstance(Constructor.java:490)
+	at com.mysql.cj.exceptions.ExceptionFactory.createException(ExceptionFactory.java:61)
+	at com.mysql.cj.exceptions.ExceptionFactory.createException(ExceptionFactory.java:105)
+	at com.mysql.cj.exceptions.ExceptionFactory.createException(ExceptionFactory.java:151)
+	at com.mysql.cj.exceptions.ExceptionFactory.createException(ExceptionFactory.java:124)
+	at com.mysql.cj.protocol.a.authentication.CachingSha2PasswordPlugin.nextAuthenticationStep(CachingSha2PasswordPlugin.java:151)
+	at com.mysql.cj.protocol.a.authentication.CachingSha2PasswordPlugin.nextAuthenticationStep(CachingSha2PasswordPlugin.java:49)
+	at com.mysql.cj.protocol.a.NativeAuthenticationProvider.proceedHandshakeWithPluggableAuthentication(NativeAuthenticationProvider.java:432)
+	at com.mysql.cj.protocol.a.NativeAuthenticationProvider.connect(NativeAuthenticationProvider.java:210)
+	at com.mysql.cj.protocol.a.NativeProtocol.connect(NativeProtocol.java:1353)
+	at com.mysql.cj.NativeSession.connect(NativeSession.java:157)
+	at com.mysql.cj.jdbc.ConnectionImpl.connectWithRetries(ConnectionImpl.java:847)
+	... 49 common frames omitted
+Caused by: com.mysql.cj.exceptions.UnableToConnectException: Public Key Retrieval is not allowed
+	at java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
+	at java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:62)
+	at java.base/jdk.internal.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)
+	at java.base/java.lang.reflect.Constructor.newInstance(Constructor.java:490)
+	at com.mysql.cj.exceptions.ExceptionFactory.createException(ExceptionFactory.java:61)
+	at com.mysql.cj.exceptions.ExceptionFactory.createException(ExceptionFactory.java:85)
+	at com.mysql.cj.protocol.a.authentication.CachingSha2PasswordPlugin.nextAuthenticationStep(CachingSha2PasswordPlugin.java:128)
+	... 55 common frames omitted
+"2021-11-19 17:10:17 - Starting BePilotApplication using Java 11.0.13 on DESKTOP-88FAOV3 with PID 2248 (D:\be-pilot-project\be-pilot\target\classes started by EdsoLabs in D:\be-pilot-project\be-pilot)
+""2021-11-19 17:10:17 - No active profile set, falling back to default profiles: default
+""2021-11-19 17:10:17 - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+""2021-11-19 17:10:17 - Finished Spring Data repository scanning in 64 ms. Found 10 JPA repository interfaces.
+""2021-11-19 17:10:18 - Tomcat initialized with port(s): 8080 (http)
+""2021-11-19 17:10:18 - Starting service [Tomcat]
+""2021-11-19 17:10:18 - Starting Servlet engine: [Apache Tomcat/9.0.54]
+""2021-11-19 17:10:18 - Initializing Spring embedded WebApplicationContext
+""2021-11-19 17:10:18 - Root WebApplicationContext: initialization completed in 1087 ms
+""2021-11-19 17:10:18 - HHH000204: Processing PersistenceUnitInfo [name: default]
+""2021-11-19 17:10:18 - HHH000412: Hibernate ORM core version 5.4.32.Final
+""2021-11-19 17:10:18 - HCANN000001: Hibernate Commons Annotations {5.1.2.Final}
+""2021-11-19 17:10:18 - HikariPool-1 - Starting...
+""2021-11-19 17:10:18 - HikariPool-1 - Start completed.
+""2021-11-19 17:10:18 - HHH000400: Using dialect: org.hibernate.dialect.MySQL5Dialect
+""2021-11-19 17:10:19 - HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+""2021-11-19 17:10:19 - Initialized JPA EntityManagerFactory for persistence unit 'default'
+""2021-11-19 17:10:19 - Will secure any request with [org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@23243bc0, org.springframework.security.web.context.SecurityContextPersistenceFilter@17d837ab, org.springframework.security.web.header.HeaderWriterFilter@58922a00, org.springframework.web.filter.CorsFilter@770c3ca2, org.springframework.security.web.authentication.logout.LogoutFilter@e38d655, com.esdo.bepilot.Util.CustomJwtAuthenticationFilter@4d354a3e, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@1a598e30, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@25031fd4, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@1267f832, org.springframework.security.web.session.SessionManagementFilter@7b45f7ef, org.springframework.security.web.access.ExceptionTranslationFilter@fe38d1e, org.springframework.security.web.access.intercept.FilterSecurityInterceptor@642334d6]
+""2021-11-19 17:10:20 - Mapped URL path [/v2/api-docs] onto method [springfox.documentation.swagger2.web.Swagger2Controller#getDocumentation(String, HttpServletRequest)]
+""2021-11-19 17:10:20 - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+""2021-11-19 17:10:20 - Tomcat started on port(s): 8080 (http) with context path ''
+""2021-11-19 17:10:20 - Context refreshed
+""2021-11-19 17:10:20 - Found 1 custom documentation plugin(s)
+""2021-11-19 17:10:20 - Scanning for api listing references
+""2021-11-19 17:10:20 - Generating unique operation named: createUserUsingPOST_1
+""2021-11-19 17:10:20 - Generating unique operation named: createUserUsingPOST_2
+""2021-11-19 17:10:20 - Generating unique operation named: createUserUsingPOST_3
+""2021-11-19 17:10:20 - Started BePilotApplication in 3.495 seconds (JVM running for 4.063)
+""2021-11-19 17:10:23 - Initializing Spring DispatcherServlet 'dispatcherServlet'
+""2021-11-19 17:10:23 - Initializing Servlet 'dispatcherServlet'
+""2021-11-19 17:10:23 - Completed initialization in 1 ms
+""2021-11-19 17:11:35 - Closing JPA EntityManagerFactory for persistence unit 'default'
+""2021-11-19 17:11:35 - HikariPool-1 - Shutdown initiated...
+""2021-11-19 17:11:35 - HikariPool-1 - Shutdown completed.
+""2021-11-19 17:11:39 - Starting BePilotApplication using Java 11.0.13 on DESKTOP-88FAOV3 with PID 12208 (D:\be-pilot-project\be-pilot\target\classes started by EdsoLabs in D:\be-pilot-project\be-pilot)
+""2021-11-19 17:11:39 - No active profile set, falling back to default profiles: default
+""2021-11-19 17:11:39 - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+""2021-11-19 17:11:40 - Finished Spring Data repository scanning in 69 ms. Found 10 JPA repository interfaces.
+""2021-11-19 17:11:40 - Tomcat initialized with port(s): 8080 (http)
+""2021-11-19 17:11:40 - Starting service [Tomcat]
+""2021-11-19 17:11:40 - Starting Servlet engine: [Apache Tomcat/9.0.54]
+""2021-11-19 17:11:40 - Initializing Spring embedded WebApplicationContext
+""2021-11-19 17:11:40 - Root WebApplicationContext: initialization completed in 1155 ms
+""2021-11-19 17:11:40 - HHH000204: Processing PersistenceUnitInfo [name: default]
+""2021-11-19 17:11:40 - HHH000412: Hibernate ORM core version 5.4.32.Final
+""2021-11-19 17:11:40 - HCANN000001: Hibernate Commons Annotations {5.1.2.Final}
+""2021-11-19 17:11:40 - HikariPool-1 - Starting...
+""2021-11-19 17:11:40 - HikariPool-1 - Start completed.
+""2021-11-19 17:11:40 - HHH000400: Using dialect: org.hibernate.dialect.MySQL5Dialect
+""2021-11-19 17:11:41 - HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+""2021-11-19 17:11:41 - Initialized JPA EntityManagerFactory for persistence unit 'default'
+""2021-11-19 17:11:42 - Will secure any request with [org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@55d776ac, org.springframework.security.web.context.SecurityContextPersistenceFilter@4b8ac512, org.springframework.security.web.header.HeaderWriterFilter@57cc0333, org.springframework.web.filter.CorsFilter@1de6f29d, org.springframework.security.web.authentication.logout.LogoutFilter@33de9d85, com.esdo.bepilot.Util.CustomJwtAuthenticationFilter@4be490da, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@69c335c4, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@16160a37, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@488c608a, org.springframework.security.web.session.SessionManagementFilter@1a4564a2, org.springframework.security.web.access.ExceptionTranslationFilter@69cc3370, org.springframework.security.web.access.intercept.FilterSecurityInterceptor@276eafad]
+""2021-11-19 17:11:42 - Mapped URL path [/v2/api-docs] onto method [springfox.documentation.swagger2.web.Swagger2Controller#getDocumentation(String, HttpServletRequest)]
+""2021-11-19 17:11:42 - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+""2021-11-19 17:11:42 - Tomcat started on port(s): 8080 (http) with context path ''
+""2021-11-19 17:11:42 - Context refreshed
+""2021-11-19 17:11:42 - Found 1 custom documentation plugin(s)
+""2021-11-19 17:11:42 - Scanning for api listing references
+""2021-11-19 17:11:42 - Generating unique operation named: createUserUsingPOST_1
+""2021-11-19 17:11:42 - Generating unique operation named: createUserUsingPOST_2
+""2021-11-19 17:11:42 - Generating unique operation named: createUserUsingPOST_3
+""2021-11-19 17:11:42 - Started BePilotApplication in 3.732 seconds (JVM running for 4.301)
+""2021-11-19 17:11:45 - Initializing Spring DispatcherServlet 'dispatcherServlet'
+""2021-11-19 17:11:45 - Initializing Servlet 'dispatcherServlet'
+""2021-11-19 17:11:45 - Completed initialization in 1 ms
+""2021-11-19 17:12:28 - Closing JPA EntityManagerFactory for persistence unit 'default'
+""2021-11-19 17:12:28 - HikariPool-1 - Shutdown initiated...
+""2021-11-19 17:12:28 - HikariPool-1 - Shutdown completed.
+""2021-11-19 17:12:31 - Starting BePilotApplication using Java 11.0.13 on DESKTOP-88FAOV3 with PID 13760 (D:\be-pilot-project\be-pilot\target\classes started by EdsoLabs in D:\be-pilot-project\be-pilot)
+""2021-11-19 17:12:31 - No active profile set, falling back to default profiles: default
+""2021-11-19 17:12:31 - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+""2021-11-19 17:12:31 - Finished Spring Data repository scanning in 67 ms. Found 10 JPA repository interfaces.
+""2021-11-19 17:12:32 - Tomcat initialized with port(s): 8080 (http)
+""2021-11-19 17:12:32 - Starting service [Tomcat]
+""2021-11-19 17:12:32 - Starting Servlet engine: [Apache Tomcat/9.0.54]
+""2021-11-19 17:12:32 - Initializing Spring embedded WebApplicationContext
+""2021-11-19 17:12:32 - Root WebApplicationContext: initialization completed in 1120 ms
+""2021-11-19 17:12:32 - HHH000204: Processing PersistenceUnitInfo [name: default]
+""2021-11-19 17:12:32 - HHH000412: Hibernate ORM core version 5.4.32.Final
+""2021-11-19 17:12:32 - HCANN000001: Hibernate Commons Annotations {5.1.2.Final}
+""2021-11-19 17:12:32 - HikariPool-1 - Starting...
+""2021-11-19 17:12:32 - HikariPool-1 - Start completed.
+""2021-11-19 17:12:32 - HHH000400: Using dialect: org.hibernate.dialect.MySQL5Dialect
+""2021-11-19 17:12:33 - HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+""2021-11-19 17:12:33 - Initialized JPA EntityManagerFactory for persistence unit 'default'
+""2021-11-19 17:12:34 - Will secure any request with [org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@cda988, org.springframework.security.web.context.SecurityContextPersistenceFilter@30bd6bc8, org.springframework.security.web.header.HeaderWriterFilter@3bede349, org.springframework.web.filter.CorsFilter@7e92e9a2, org.springframework.security.web.authentication.logout.LogoutFilter@1ed0128b, com.esdo.bepilot.Util.CustomJwtAuthenticationFilter@1f916219, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@90b9695, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@59043128, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@c0a8787, org.springframework.security.web.session.SessionManagementFilter@5ce1ec7, org.springframework.security.web.access.ExceptionTranslationFilter@71d8794f, org.springframework.security.web.access.intercept.FilterSecurityInterceptor@6a1b4854]
+""2021-11-19 17:12:34 - Mapped URL path [/v2/api-docs] onto method [springfox.documentation.swagger2.web.Swagger2Controller#getDocumentation(String, HttpServletRequest)]
+""2021-11-19 17:12:34 - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+""2021-11-19 17:12:34 - Tomcat started on port(s): 8080 (http) with context path ''
+""2021-11-19 17:12:34 - Context refreshed
+""2021-11-19 17:12:34 - Found 1 custom documentation plugin(s)
+""2021-11-19 17:12:34 - Scanning for api listing references
+""2021-11-19 17:12:34 - Generating unique operation named: createUserUsingPOST_1
+""2021-11-19 17:12:34 - Generating unique operation named: createUserUsingPOST_2
+""2021-11-19 17:12:34 - Generating unique operation named: createUserUsingPOST_3
+""2021-11-19 17:12:34 - Started BePilotApplication in 3.799 seconds (JVM running for 4.457)
+""2021-11-19 17:12:37 - Initializing Spring DispatcherServlet 'dispatcherServlet'
+""2021-11-19 17:12:37 - Initializing Servlet 'dispatcherServlet'
+""2021-11-19 17:12:37 - Completed initialization in 1 ms
+""2021-11-19 17:16:02 - HikariPool-1 - Thread starvation or clock leap detected (housekeeper delta=1m32s979ms935µs400ns).
+""2021-11-19 17:16:02 - Closing JPA EntityManagerFactory for persistence unit 'default'
+""2021-11-19 17:16:02 - HikariPool-1 - Shutdown initiated...
+""2021-11-19 17:16:02 - HikariPool-1 - Shutdown completed.
+""2021-11-19 17:16:06 - Starting BePilotApplication using Java 11.0.13 on DESKTOP-88FAOV3 with PID 10944 (D:\be-pilot-project\be-pilot\target\classes started by EdsoLabs in D:\be-pilot-project\be-pilot)
+""2021-11-19 17:16:06 - No active profile set, falling back to default profiles: default
+""2021-11-19 17:16:07 - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+""2021-11-19 17:16:07 - Finished Spring Data repository scanning in 75 ms. Found 10 JPA repository interfaces.
+""2021-11-19 17:16:07 - Tomcat initialized with port(s): 8080 (http)
+""2021-11-19 17:16:07 - Starting service [Tomcat]
+""2021-11-19 17:16:07 - Starting Servlet engine: [Apache Tomcat/9.0.54]
+""2021-11-19 17:16:07 - Initializing Spring embedded WebApplicationContext
+""2021-11-19 17:16:07 - Root WebApplicationContext: initialization completed in 1152 ms
+""2021-11-19 17:16:07 - HHH000204: Processing PersistenceUnitInfo [name: default]
+""2021-11-19 17:16:07 - HHH000412: Hibernate ORM core version 5.4.32.Final
+""2021-11-19 17:16:07 - HCANN000001: Hibernate Commons Annotations {5.1.2.Final}
+""2021-11-19 17:16:08 - HikariPool-1 - Starting...
+""2021-11-19 17:16:08 - HikariPool-1 - Start completed.
+""2021-11-19 17:16:08 - HHH000400: Using dialect: org.hibernate.dialect.MySQL5Dialect
+""2021-11-19 17:16:08 - HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+""2021-11-19 17:16:08 - Initialized JPA EntityManagerFactory for persistence unit 'default'
+""2021-11-19 17:16:09 - Will secure any request with [org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@2df7766b, org.springframework.security.web.context.SecurityContextPersistenceFilter@3bede349, org.springframework.security.web.header.HeaderWriterFilter@585718dd, org.springframework.web.filter.CorsFilter@235d46b2, org.springframework.security.web.authentication.logout.LogoutFilter@23243bc0, com.esdo.bepilot.Util.CustomJwtAuthenticationFilter@391d1e33, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@299c86f0, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@276eafad, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@1644cc2d, org.springframework.security.web.session.SessionManagementFilter@3749c6ac, org.springframework.security.web.access.ExceptionTranslationFilter@44b5b54, org.springframework.security.web.access.intercept.FilterSecurityInterceptor@94b5fe3]
+""2021-11-19 17:16:09 - Mapped URL path [/v2/api-docs] onto method [springfox.documentation.swagger2.web.Swagger2Controller#getDocumentation(String, HttpServletRequest)]
+""2021-11-19 17:16:09 - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+""2021-11-19 17:16:09 - Tomcat started on port(s): 8080 (http) with context path ''
+""2021-11-19 17:16:09 - Context refreshed
+""2021-11-19 17:16:09 - Found 1 custom documentation plugin(s)
+""2021-11-19 17:16:09 - Scanning for api listing references
+""2021-11-19 17:16:10 - Generating unique operation named: createUserUsingPOST_1
+""2021-11-19 17:16:10 - Generating unique operation named: createUserUsingPOST_2
+""2021-11-19 17:16:10 - Generating unique operation named: createUserUsingPOST_3
+""2021-11-19 17:16:10 - Started BePilotApplication in 3.823 seconds (JVM running for 4.479)
+""2021-11-19 17:16:12 - Initializing Spring DispatcherServlet 'dispatcherServlet'
+""2021-11-19 17:16:12 - Initializing Servlet 'dispatcherServlet'
+""2021-11-19 17:16:12 - Completed initialization in 1 ms
+""2021-11-19 17:17:37 - Closing JPA EntityManagerFactory for persistence unit 'default'
+""2021-11-19 17:17:37 - HikariPool-1 - Shutdown initiated...
+""2021-11-19 17:17:37 - HikariPool-1 - Shutdown completed.
+""2021-11-19 17:17:41 - Starting BePilotApplication using Java 11.0.13 on DESKTOP-88FAOV3 with PID 12708 (D:\be-pilot-project\be-pilot\target\classes started by EdsoLabs in D:\be-pilot-project\be-pilot)
+""2021-11-19 17:17:41 - No active profile set, falling back to default profiles: default
+""2021-11-19 17:17:42 - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+""2021-11-19 17:17:42 - Finished Spring Data repository scanning in 64 ms. Found 10 JPA repository interfaces.
+""2021-11-19 17:17:42 - Tomcat initialized with port(s): 8080 (http)
+""2021-11-19 17:17:42 - Starting service [Tomcat]
+""2021-11-19 17:17:42 - Starting Servlet engine: [Apache Tomcat/9.0.54]
+""2021-11-19 17:17:42 - Initializing Spring embedded WebApplicationContext
+""2021-11-19 17:17:42 - Root WebApplicationContext: initialization completed in 1055 ms
+""2021-11-19 17:17:43 - HHH000204: Processing PersistenceUnitInfo [name: default]
+""2021-11-19 17:17:43 - HHH000412: Hibernate ORM core version 5.4.32.Final
+""2021-11-19 17:17:43 - HCANN000001: Hibernate Commons Annotations {5.1.2.Final}
+""2021-11-19 17:17:43 - HikariPool-1 - Starting...
+""2021-11-19 17:17:43 - HikariPool-1 - Start completed.
+""2021-11-19 17:17:43 - HHH000400: Using dialect: org.hibernate.dialect.MySQL5Dialect
+""2021-11-19 17:17:44 - HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+""2021-11-19 17:17:44 - Initialized JPA EntityManagerFactory for persistence unit 'default'
+""2021-11-19 17:17:44 - Will secure any request with [org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@3b6c55b6, org.springframework.security.web.context.SecurityContextPersistenceFilter@6f09cb98, org.springframework.security.web.header.HeaderWriterFilter@1a916120, org.springframework.web.filter.CorsFilter@55e02661, org.springframework.security.web.authentication.logout.LogoutFilter@bb160fb, com.esdo.bepilot.Util.CustomJwtAuthenticationFilter@353e6389, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@3b3dc752, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@7b45f7ef, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@7f38545a, org.springframework.security.web.session.SessionManagementFilter@58922a00, org.springframework.security.web.access.ExceptionTranslationFilter@5f93ec02, org.springframework.security.web.access.intercept.FilterSecurityInterceptor@627cb3ed]
+""2021-11-19 17:17:44 - Mapped URL path [/v2/api-docs] onto method [springfox.documentation.swagger2.web.Swagger2Controller#getDocumentation(String, HttpServletRequest)]
+""2021-11-19 17:17:44 - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+""2021-11-19 17:17:44 - Tomcat started on port(s): 8080 (http) with context path ''
+""2021-11-19 17:17:44 - Context refreshed
+""2021-11-19 17:17:44 - Found 1 custom documentation plugin(s)
+""2021-11-19 17:17:44 - Scanning for api listing references
+""2021-11-19 17:17:45 - Generating unique operation named: createUserUsingPOST_1
+""2021-11-19 17:17:45 - Generating unique operation named: createUserUsingPOST_2
+""2021-11-19 17:17:45 - Generating unique operation named: createUserUsingPOST_3
+""2021-11-19 17:17:45 - Started BePilotApplication in 3.535 seconds (JVM running for 4.117)
+""2021-11-19 17:17:51 - Initializing Spring DispatcherServlet 'dispatcherServlet'
+""2021-11-19 17:17:51 - Initializing Servlet 'dispatcherServlet'
+""2021-11-19 17:17:51 - Completed initialization in 1 ms
+""2021-11-19 17:19:07 - Closing JPA EntityManagerFactory for persistence unit 'default'
+""2021-11-19 17:19:07 - HikariPool-1 - Shutdown initiated...
+""2021-11-19 17:19:07 - HikariPool-1 - Shutdown completed.
+""2021-11-19 17:19:11 - Starting BePilotApplication using Java 11.0.13 on DESKTOP-88FAOV3 with PID 12596 (D:\be-pilot-project\be-pilot\target\classes started by EdsoLabs in D:\be-pilot-project\be-pilot)
+""2021-11-19 17:19:11 - No active profile set, falling back to default profiles: default
+""2021-11-19 17:19:11 - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+""2021-11-19 17:19:11 - Finished Spring Data repository scanning in 66 ms. Found 10 JPA repository interfaces.
+""2021-11-19 17:19:12 - Tomcat initialized with port(s): 8080 (http)
+""2021-11-19 17:19:12 - Starting service [Tomcat]
+""2021-11-19 17:19:12 - Starting Servlet engine: [Apache Tomcat/9.0.54]
+""2021-11-19 17:19:12 - Initializing Spring embedded WebApplicationContext
+""2021-11-19 17:19:12 - Root WebApplicationContext: initialization completed in 1084 ms
+""2021-11-19 17:19:12 - HHH000204: Processing PersistenceUnitInfo [name: default]
+""2021-11-19 17:19:12 - HHH000412: Hibernate ORM core version 5.4.32.Final
+""2021-11-19 17:19:12 - HCANN000001: Hibernate Commons Annotations {5.1.2.Final}
+""2021-11-19 17:19:12 - HikariPool-1 - Starting...
+""2021-11-19 17:19:12 - HikariPool-1 - Start completed.
+""2021-11-19 17:19:12 - HHH000400: Using dialect: org.hibernate.dialect.MySQL5Dialect
+""2021-11-19 17:19:13 - HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+""2021-11-19 17:19:13 - Initialized JPA EntityManagerFactory for persistence unit 'default'
+""2021-11-19 17:19:13 - Will secure any request with [org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@23243bc0, org.springframework.security.web.context.SecurityContextPersistenceFilter@17d837ab, org.springframework.security.web.header.HeaderWriterFilter@58922a00, org.springframework.web.filter.CorsFilter@770c3ca2, org.springframework.security.web.authentication.logout.LogoutFilter@e38d655, com.esdo.bepilot.Util.CustomJwtAuthenticationFilter@4d354a3e, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@1a598e30, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@25031fd4, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@1267f832, org.springframework.security.web.session.SessionManagementFilter@7b45f7ef, org.springframework.security.web.access.ExceptionTranslationFilter@fe38d1e, org.springframework.security.web.access.intercept.FilterSecurityInterceptor@642334d6]
+""2021-11-19 17:19:13 - Mapped URL path [/v2/api-docs] onto method [springfox.documentation.swagger2.web.Swagger2Controller#getDocumentation(String, HttpServletRequest)]
+""2021-11-19 17:19:14 - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+""2021-11-19 17:19:14 - Tomcat started on port(s): 8080 (http) with context path ''
+""2021-11-19 17:19:14 - Context refreshed
+""2021-11-19 17:19:14 - Found 1 custom documentation plugin(s)
+""2021-11-19 17:19:14 - Scanning for api listing references
+""2021-11-19 17:19:14 - Generating unique operation named: createUserUsingPOST_1
+""2021-11-19 17:19:14 - Generating unique operation named: createUserUsingPOST_2
+""2021-11-19 17:19:14 - Generating unique operation named: createUserUsingPOST_3
+""2021-11-19 17:19:14 - Started BePilotApplication in 3.58 seconds (JVM running for 4.156)
+""2021-11-19 17:19:18 - Initializing Spring DispatcherServlet 'dispatcherServlet'
+""2021-11-19 17:19:18 - Initializing Servlet 'dispatcherServlet'
+""2021-11-19 17:19:18 - Completed initialization in 1 ms
+""2021-11-19 17:22:37 - Closing JPA EntityManagerFactory for persistence unit 'default'
+""2021-11-19 17:22:37 - HikariPool-1 - Shutdown initiated...
+""2021-11-19 17:22:37 - HikariPool-1 - Shutdown completed.
+""2021-11-19 17:22:41 - Starting BePilotApplication using Java 11.0.13 on DESKTOP-88FAOV3 with PID 16232 (D:\be-pilot-project\be-pilot\target\classes started by EdsoLabs in D:\be-pilot-project\be-pilot)
+""2021-11-19 17:22:41 - No active profile set, falling back to default profiles: default
+""2021-11-19 17:22:41 - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+""2021-11-19 17:22:41 - Finished Spring Data repository scanning in 74 ms. Found 10 JPA repository interfaces.
+""2021-11-19 17:22:42 - Tomcat initialized with port(s): 8080 (http)
+""2021-11-19 17:22:42 - Starting service [Tomcat]
+""2021-11-19 17:22:42 - Starting Servlet engine: [Apache Tomcat/9.0.54]
+""2021-11-19 17:22:42 - Initializing Spring embedded WebApplicationContext
+""2021-11-19 17:22:42 - Root WebApplicationContext: initialization completed in 1139 ms
+""2021-11-19 17:22:42 - HHH000204: Processing PersistenceUnitInfo [name: default]
+""2021-11-19 17:22:42 - HHH000412: Hibernate ORM core version 5.4.32.Final
+""2021-11-19 17:22:42 - HCANN000001: Hibernate Commons Annotations {5.1.2.Final}
+""2021-11-19 17:22:42 - HikariPool-1 - Starting...
+""2021-11-19 17:22:42 - HikariPool-1 - Start completed.
+""2021-11-19 17:22:42 - HHH000400: Using dialect: org.hibernate.dialect.MySQL5Dialect
+""2021-11-19 17:22:43 - HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+""2021-11-19 17:22:43 - Initialized JPA EntityManagerFactory for persistence unit 'default'
+""2021-11-19 17:22:44 - Will secure any request with [org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@59043128, org.springframework.security.web.context.SecurityContextPersistenceFilter@29280ca6, org.springframework.security.web.header.HeaderWriterFilter@1930e8ef, org.springframework.web.filter.CorsFilter@642334d6, org.springframework.security.web.authentication.logout.LogoutFilter@1c0a4f87, com.esdo.bepilot.Util.CustomJwtAuthenticationFilter@3c7b137a, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@32d3b965, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@6768dc74, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@6f2b608e, org.springframework.security.web.session.SessionManagementFilter@4b20a8e4, org.springframework.security.web.access.ExceptionTranslationFilter@2d732cda, org.springframework.security.web.access.intercept.FilterSecurityInterceptor@55d776ac]
+""2021-11-19 17:22:44 - Mapped URL path [/v2/api-docs] onto method [springfox.documentation.swagger2.web.Swagger2Controller#getDocumentation(String, HttpServletRequest)]
+""2021-11-19 17:22:44 - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+""2021-11-19 17:22:44 - Tomcat started on port(s): 8080 (http) with context path ''
+""2021-11-19 17:22:44 - Context refreshed
+""2021-11-19 17:22:44 - Found 1 custom documentation plugin(s)
+""2021-11-19 17:22:44 - Scanning for api listing references
+""2021-11-19 17:22:44 - Generating unique operation named: createUserUsingPOST_1
+""2021-11-19 17:22:44 - Generating unique operation named: createUserUsingPOST_2
+""2021-11-19 17:22:44 - Generating unique operation named: createUserUsingPOST_3
+""2021-11-19 17:22:44 - Started BePilotApplication in 3.792 seconds (JVM running for 4.473)
+""2021-11-19 17:22:48 - Initializing Spring DispatcherServlet 'dispatcherServlet'
+""2021-11-19 17:22:48 - Initializing Servlet 'dispatcherServlet'
+""2021-11-19 17:22:48 - Completed initialization in 1 ms
+""2021-11-19 17:26:13 - Closing JPA EntityManagerFactory for persistence unit 'default'
+""2021-11-19 17:26:13 - HikariPool-1 - Shutdown initiated...
+""2021-11-19 17:26:13 - HikariPool-1 - Shutdown completed.
 "

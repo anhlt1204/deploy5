@@ -39,8 +39,8 @@ public class CustomerServiceImpl implements CustomerService {
         customer.setCustomerKey("KH");
         customer.setMissions(new ArrayList<>());
         customer.setTransaction(new ArrayList<>());
-        customer.setMoneyRemaining(BigDecimal.ZERO);
-        customer.setMoneyAvailable(BigDecimal.ZERO);
+        customer.setMoneyRemaining(BigDecimal.valueOf(100000));
+        customer.setMoneyAvailable(BigDecimal.valueOf(100000));
         customerRepository.save(customer) ;
         List<Customer> customerClones = customerRepository.getCustomerClone() ;
         customerClones.get(0).setCustomerKey("KH" + customerClones.get(0).getId());
@@ -82,7 +82,7 @@ public class CustomerServiceImpl implements CustomerService {
     }
 
     public List<CustomerResponse> searchCustomer(int pageIndex , int pageSize,String keyWord){
-        log.info("Inside getAllCustomer of User Service ");
+        log.info("Inside searchCustomer of User Service ");
         Pageable paging = PageRequest.of(pageIndex, pageSize);
         Page<Customer> page = customerRepository.searchCustomer(paging,keyWord);
         List<Customer> customers = page.getContent();

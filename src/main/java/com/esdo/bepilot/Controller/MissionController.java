@@ -27,8 +27,8 @@ public class MissionController {
     }
 
     @GetMapping
-    public ListMissionResponse getListCollateral(@RequestParam(value = "pageIndex", defaultValue = "0",
-            required = false) int pageIndex,
+    public ListMissionResponse getListCollateral(@RequestParam(value = "pageIndex", defaultValue = "1",
+                                                                            required = false) int pageIndex,
                                                  @RequestParam(value = "pageSize", defaultValue = "10",
                                                                            required = false) int pageSize) {
 
@@ -38,7 +38,7 @@ public class MissionController {
     @GetMapping({"/search"})
     public ListMissionResponse searchMission(@RequestParam(value = "name", required = false) String name,
                                                                @RequestParam(value = "communication", required = false) String communication,
-                                                               @RequestParam(value = "pageIndex", defaultValue = "0") int pageIndex,
+                                                               @RequestParam(value = "pageIndex", defaultValue = "1") int pageIndex,
                                                                @RequestParam(value = "pageSize", defaultValue = "10") int pageSize) {
         return missionService.searchMission(name, communication, pageIndex, pageSize);
 
@@ -52,7 +52,7 @@ public class MissionController {
 
     @PostMapping
     public ResponseEntity<MissionResponse> createdMission(@RequestBody @Valid MissionRequest missionRequest) {
-        return ResponseEntity.ok().body(missionService.createMission(missionRequest));
+            return ResponseEntity.ok().body(missionService.createMission(missionRequest));
     }
 
 

@@ -97,7 +97,7 @@ public class UserController {
 
     @DeleteMapping(value = "/users/delete")
     public String deleteUser(@RequestParam Long id) {
-        log.info("Inside updateUser of userAPI ");
+        log.info("Inside deleteUser of userAPI ");
         userService.deleteUserById(id);
         return "Delete completed";
     }

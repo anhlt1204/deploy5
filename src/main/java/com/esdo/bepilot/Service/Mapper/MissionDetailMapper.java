@@ -1,6 +1,8 @@
 package com.esdo.bepilot.Service.Mapper;
 
 import com.esdo.bepilot.Model.Entity.MissionDetail;
+import com.esdo.bepilot.Model.Request.MissionDetailRequest;
+import com.esdo.bepilot.Model.Request.MissionRequest;
 import com.esdo.bepilot.Model.Response.MissionDetailResponse;
 import org.springframework.stereotype.Component;
 
@@ -41,6 +43,13 @@ public class MissionDetailMapper {
         missionDetailResponse.setCreateAt(missionDetail.getCreateAt());
         missionDetailResponse.setUpdateAt(missionDetail.getUpdateAt());
         return missionDetailResponse;
+    }
+
+    public MissionDetail mapToMissionDetailRequest(MissionDetailRequest request) {
+        MissionDetail missionDetail = new MissionDetail() ;
+
+        missionDetail.setStatus(request.getStatus());
+        return missionDetail ;
     }
 
 

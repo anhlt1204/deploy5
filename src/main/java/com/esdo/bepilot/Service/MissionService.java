@@ -12,7 +12,7 @@ public interface MissionService {
 
     MissionResponse getById(Long id);
 
-    ListMissionResponse getListMission(int pageIndex, int pageSize);
+    ListMissionResponse getListMission(Integer pageIndex, Integer pageSize);
 
     MissionResponse createMission(MissionRequest missionRequest);
 
