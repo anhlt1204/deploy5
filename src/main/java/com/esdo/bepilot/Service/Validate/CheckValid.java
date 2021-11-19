@@ -19,7 +19,7 @@ public class CheckValid {
     // ít nhất 2 chữ cái hoặc số
     // có thể miền cấp 1 hoặc cấp 2 (Ví dụ: .com hoặc .com.vn)
     // tên miền chỉ có từ 2 đến 4 ký tự
-    private static final String regexEmail = "^([\\w]+[\\.\\_]*[\\w]+)@[\\w]{2,}(\\.[\\w]{2,4}){1,2}$";
+    private static final String regexEmail = "^([\\w]+[\\.\\_]*[\\w]+)@[\\w]{2,}(\\.[\\w]{2,6}){1,2}$";
 
     // Kiểm tra số bắt đầu bằng 0 hoặc +84 và đằng sau là 9 chữ số
     private static final String regexPhone = "^(0|\\+84)[0-9]{9}$";
