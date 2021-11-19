@@ -1,6 +1,7 @@
 package com.esdo.bepilot.Service.Implement;
 
 import com.esdo.bepilot.Model.Entity.Customer;
+import com.esdo.bepilot.Model.Entity.Mission;
 import com.esdo.bepilot.Model.Entity.User;
 import com.esdo.bepilot.Model.Request.CustomerRequest;
 import com.esdo.bepilot.Model.Response.CustomerResponse;
@@ -8,6 +9,8 @@ import com.esdo.bepilot.Model.Response.UserResponse;
 import com.esdo.bepilot.Repository.CustomerRepository;
 import com.esdo.bepilot.Service.CustomerService;
 import com.esdo.bepilot.Service.Mapper.CustomerMapper;
+import com.esdo.bepilot.Specification.CustomerSpecification;
+import com.esdo.bepilot.Specification.MissionSpecification;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Page;
@@ -84,7 +87,8 @@ public class CustomerServiceImpl implements CustomerService {
     public List<CustomerResponse> searchCustomer(int pageIndex , int pageSize,String keyWord){
         log.info("Inside searchCustomer of User Service ");
         Pageable paging = PageRequest.of(pageIndex, pageSize);
-        Page<Customer> page = customerRepository.searchCustomer(paging,keyWord);
+//        Page<Customer> page = customerRepository.searchCustomer(paging,keyWord);
+        Page<Customer> page = customerRepository.findAll(CustomerSpecification.filterCustomer(keyWord), paging);
         List<Customer> customers = page.getContent();
         List<CustomerResponse> responses = customerMapper.mapToListCustomerEntity(customers) ;
         return responses ;
