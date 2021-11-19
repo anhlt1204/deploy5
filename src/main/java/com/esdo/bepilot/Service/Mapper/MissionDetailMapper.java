@@ -38,6 +38,8 @@ public class MissionDetailMapper {
         missionDetailResponse.setMissionId(missionDetail.getMission().getId());
         missionDetailResponse.setUserId(missionDetail.getUsers().getId());
         missionDetailResponse.setStatus(missionDetail.getStatus());
+        missionDetailResponse.setCreateAt(missionDetail.getCreateAt());
+        missionDetailResponse.setUpdateAt(missionDetail.getUpdateAt());
         return missionDetailResponse;
     }
 

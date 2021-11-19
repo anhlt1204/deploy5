@@ -48,10 +48,10 @@ public class Customer {
     @Column
     private String companyName;
 
-    @OneToMany(fetch = FetchType.EAGER, mappedBy = "customer" )
+    @OneToMany(fetch = FetchType.EAGER, mappedBy = "customer" , cascade =  CascadeType.ALL)
     private List<TransactionOfCustomer> transaction = new ArrayList<>();
 
-    @OneToMany(mappedBy = "customer")
+    @OneToMany(mappedBy = "customer",cascade = CascadeType.ALL)
     @JsonIgnore
     private List<Mission> missions;
 

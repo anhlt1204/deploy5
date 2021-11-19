@@ -70,8 +70,8 @@ public class Mission {
     @Column(columnDefinition = "VARCHAR(20)")
     private String status;
 
-    @ManyToOne
-    @JoinColumn(name = "customer_id",referencedColumnName = "id")
+    @ManyToOne(fetch = FetchType.LAZY)
+    @JoinColumn(name = "customer_id",referencedColumnName = "id", insertable = false, updatable = false)
     @JsonIgnore
     private Customer customer;
 

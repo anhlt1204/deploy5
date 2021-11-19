@@ -4,8 +4,12 @@ import com.fasterxml.jackson.annotation.JsonIgnore;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
+import org.hibernate.annotations.UpdateTimestamp;
+import org.springframework.data.annotation.CreatedDate;
+import org.springframework.data.annotation.LastModifiedDate;
 
 import javax.persistence.*;
+import java.time.OffsetDateTime;
 
 @Data
 @NoArgsConstructor
@@ -29,4 +33,13 @@ public class MissionDetail {
 
     @Column(columnDefinition = "VARCHAR(20)")
     private String status;
+
+    @CreatedDate
+    @Column(columnDefinition = "timestamp default now()")
+    private OffsetDateTime createAt;
+
+    @LastModifiedDate
+    @UpdateTimestamp
+    @Column(columnDefinition = "timestamp default now()")
+    private OffsetDateTime updateAt;
 }

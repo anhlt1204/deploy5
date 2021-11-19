@@ -46,7 +46,7 @@ public class User {
 
     private int numberOfMissionDone;
 
-    @OneToMany(mappedBy = "user")
+    @OneToMany(mappedBy = "user" , cascade = CascadeType.ALL)
     private List<Withdrawn> withdrawnList = new ArrayList<>()  ;
 
     @OneToMany(mappedBy = "users",cascade = CascadeType.ALL)

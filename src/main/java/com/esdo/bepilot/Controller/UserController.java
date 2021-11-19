@@ -1,6 +1,7 @@
 package com.esdo.bepilot.Controller;
 
 import com.esdo.bepilot.Model.Entity.MissionDetail;
+import com.esdo.bepilot.Model.Entity.MissionDetailGroupByDay;
 import com.esdo.bepilot.Model.Entity.User;
 import com.esdo.bepilot.Model.Entity.Withdrawn;
 import com.esdo.bepilot.Model.Request.UserRequest;
@@ -108,6 +109,22 @@ public class UserController {
         ResponseEntity response = new ResponseEntity();
         log.info("Inside getListMissionDetail of userAPI ");
         List<MissionDetailResponse> responses = missionDetailService.getMissionDetailByUserId(pageIndex, pageSize, id);
+        response.setData(responses);
+        response.setPage(pageIndex);
+        response.setSize(pageSize);
+        response.setTotalPage(responses.size() / pageSize);
+        response.setTotalObject(responses.size());
+
+        return response;
+    }
+
+    @GetMapping(value = "users/{id}/missiondetail1")
+    public ResponseEntity<List<MissionDetailGroupByDay>> getListMissionDetailByDay(@PathVariable Long id,
+                                                                                   @RequestParam(name = "pageIndex",defaultValue = "0") int pageIndex,
+                                                                                   @RequestParam(name = "pageSize",defaultValue = "10") int pageSize) {
+        ResponseEntity response = new ResponseEntity();
+        log.info("Inside getListMissionDetail of userAPI ");
+        List<MissionDetailGroupByDay> responses = missionDetailService.getMissionDetailByDay(pageIndex, pageSize, id);
         response.setData(responses);
         response.setPage(pageIndex);
         response.setSize(pageSize);

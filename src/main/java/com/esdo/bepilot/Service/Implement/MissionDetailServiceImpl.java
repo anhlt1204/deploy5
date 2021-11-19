@@ -2,6 +2,7 @@ package com.esdo.bepilot.Service.Implement;
 
 import com.esdo.bepilot.Model.Entity.Customer;
 import com.esdo.bepilot.Model.Entity.MissionDetail;
+import com.esdo.bepilot.Model.Entity.MissionDetailGroupByDay;
 import com.esdo.bepilot.Model.Response.CustomerResponse;
 import com.esdo.bepilot.Model.Response.MissionDetailResponse;
 import com.esdo.bepilot.Repository.MissionDetailRepository;
@@ -45,6 +46,14 @@ public class MissionDetailServiceImpl implements MissionDetailService {
         Page<MissionDetail> page = missionDetailRepository.getByUserId(paging,id) ;
         List<MissionDetail> list = page.getContent();
         List<MissionDetailResponse> responses = mapper.mapToListMissionDetail(list) ;
+        return responses ;
+    }
+
+    public List<MissionDetailGroupByDay> getMissionDetailByDay(int pageIndex , int pageSize , Long id) {
+        log.info("Inside getMissionDetailById of MissionDetail Service ");
+        Pageable paging = PageRequest.of(pageIndex, pageSize);
+        Page<MissionDetailGroupByDay> page = missionDetailRepository.getMissionDetailGroupByDay(paging,id) ;
+        List<MissionDetailGroupByDay> responses = page.getContent();
         return responses ;
     }
 
