@@ -81,8 +81,8 @@ public class MissionServiceImpl implements MissionService {
         }
 
         response.setMissionResponseList(missionResponseList);
-        response.setPage(3);
-        response.setSize(5);
+        response.setPage(pageIndex);
+        response.setSize(pageSize);
         response.setTotalPages(page.getTotalPages());
         response.setTotalItems((int) page.getTotalElements());
         return response;
