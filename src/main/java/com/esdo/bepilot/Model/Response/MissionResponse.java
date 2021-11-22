@@ -49,6 +49,8 @@ public class MissionResponse {
 
     private String companyName;
 
+    private Long customerId;
+
     private String status;
 
     private List<MissionDetailResponse> missionDetails = new ArrayList<>() ;

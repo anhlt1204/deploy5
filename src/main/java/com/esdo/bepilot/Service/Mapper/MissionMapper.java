@@ -59,6 +59,7 @@ public class MissionMapper {
         missionResponse.setStatus(mission.getStatus());
         missionResponse.setCustomerName(mission.getCustomer().getName());
         missionResponse.setCompanyName(mission.getCustomer().getCompanyName());
+        missionResponse.setCustomerId(mission.getCustomer().getId());
         missionResponse.setMissionDetails(missionDetailMapper.mapToListMissionDetail(mission.getMissionDetails()));
         return missionResponse;
     }
