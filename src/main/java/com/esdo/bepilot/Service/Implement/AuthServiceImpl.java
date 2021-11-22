@@ -104,7 +104,7 @@ public class AuthServiceImpl implements AuthService {
         CheckValid.checkForgotPasswordRequest(request, accountRepository);
 
         ForgotPasswordResponse response = new ForgotPasswordResponse();
-        int random = 100000 + (int) (Math.random() * 99999);
+        int random = 100000 + (int) (Math.random() * 899999);
         SendMail.send(request.getEmail(), "Send OTP", random, javaMailSender);
 
         Account account = accountRepository.findByEmail(request.getEmail());
