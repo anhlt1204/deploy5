@@ -2,10 +2,7 @@ package com.esdo.bepilot.Controller;
 
 import com.esdo.bepilot.Model.Entity.MissionDetailGroupByDay;
 import com.esdo.bepilot.Model.Request.UserRequest;
-import com.esdo.bepilot.Model.Response.MissionDetailResponse;
-import com.esdo.bepilot.Model.Response.ResponseEntity;
-import com.esdo.bepilot.Model.Response.UserResponse;
-import com.esdo.bepilot.Model.Response.WithdrawnResponse;
+import com.esdo.bepilot.Model.Response.*;
 import com.esdo.bepilot.Service.Implement.MissionDetailServiceImpl;
 import com.esdo.bepilot.Service.Implement.UserServiceImpl;
 import com.esdo.bepilot.Service.Implement.WithdrawnServiceImpl;
@@ -164,6 +161,35 @@ public class UserController {
         ResponseEntity response = new ResponseEntity();
         log.info("Inside getListMissionDetail of userAPI ");
         List<MissionDetailGroupByDay> responses = missionDetailService.getMissionDetailByDay(pageIndex, pageSize, id);
+        response.setData(responses);
+        response.setPage(pageIndex);
+        response.setSize(pageSize);
+        response.setTotalPage(responses.size() / pageSize);
+        response.setTotalObject(responses.size());
+
+        return response;
+    }
+
+    /**
+     * tìm kiếm khách hàng
+     * @param pageIndex
+     * @param pageSize
+     * @param keyWord
+     * @return
+     */
+    @GetMapping(value = "/users/search")
+    public ResponseEntity<List<UserResponse>> searchUser(@RequestParam(value = "pageIndex", defaultValue = "0",
+            required = false) int pageIndex,
+                                                                 @RequestParam(value = "pageSize", defaultValue = "10",
+                                                                         required = false) int pageSize,
+                                                                 @RequestParam(name = "keyWord") String keyWord) {
+
+        if (keyWord == null) {
+            keyWord = "";
+        }
+        ResponseEntity response = new ResponseEntity();
+        log.info("Inside searchCustomer of customerAPI ");
+        List<UserResponse> responses = userService.searchUser(pageIndex, pageSize, keyWord);
         response.setData(responses);
         response.setPage(pageIndex);
         response.setSize(pageSize);

@@ -1,12 +1,16 @@
 package com.esdo.bepilot.Service.Implement;
 
+import com.esdo.bepilot.Model.Entity.Customer;
 import com.esdo.bepilot.Model.Entity.User;
 import com.esdo.bepilot.Model.Entity.Withdrawn;
 import com.esdo.bepilot.Model.Request.UserRequest;
+import com.esdo.bepilot.Model.Response.CustomerResponse;
 import com.esdo.bepilot.Model.Response.UserResponse;
 import com.esdo.bepilot.Repository.UserRepository;
 import com.esdo.bepilot.Service.Mapper.UserMapper;
 import com.esdo.bepilot.Service.UserService;
+import com.esdo.bepilot.Specification.CustomerSpecification;
+import com.esdo.bepilot.Specification.UserSpecification;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Page;
@@ -74,5 +78,16 @@ public class UserServiceImpl implements UserService {
         log.info("Inside updateUserById of User Service ");
         userRepository.saveUser(id, name , phone) ;
         return userMapper.mapToUserEntity(userRepository.findById(id).get()) ;
+    }
+
+    public List<UserResponse> searchUser(int pageIndex , int pageSize, String keyWord){
+        log.info("Inside searchUser of User Service ");
+        Pageable paging = PageRequest.of(pageIndex, pageSize);
+//        Page<Customer> page = customerRepository.searchCustomer(paging,keyWord);
+        Page<User> page = userRepository.findAll(UserSpecification.filterUser(keyWord.toUpperCase()),paging);
+        List<User> customers = page.getContent();
+        List<UserResponse> responses = userMapper.mapToListUserEntity(customers) ;
+        return responses ;
+
     }
 }
