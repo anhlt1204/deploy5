@@ -118,7 +118,10 @@ public class AuthController {
     @PostMapping(value = "/image")
     @Transactional(rollbackFor = Exception.class)
     @ApiOperation("Tải ảnh lên cloudianry")
-    public ResponseEntity<?> upload(@RequestParam("files") MultipartFile[] files) throws IOException {
+    public ResponseEntity<?> upload(@RequestBody UploadImageRequest request) throws IOException {
+        System.out.println(request.getName());
+        MultipartFile[] files = request.getFiles();
+
         log.info(this.getClass().getName() + ": start upload" + "\n\tParam\n\t\t" + files);
         for (int i = 0; i < files.length; i++) {
             Map<?, ?> cloudinaryMap = cloudinary.uploader().upload(files[i].getBytes(), ObjectUtils.emptyMap());
