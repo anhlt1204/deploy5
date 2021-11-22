@@ -23,7 +23,7 @@ public interface MissionDetailRepository extends JpaRepository<MissionDetail, Lo
     @Query(value = "SELECT m FROM MissionDetail m where m.users.id = ?1 ")
     Page<MissionDetail> getByUserId(Pageable pageable, Long id) ;
 
-    @Query(nativeQuery = true ,value = "SELECT md.update_at as time, COUNT(md.id) as totalMission, SUM(m.money_received) as totalMoney FROM mission_detail md JOIN mission m ON md.mission_id = m.id WHERE md.status = 'COMPLETE' and  md.user_id = ?1 GROUP By DATE(md.update_at)" )
+    @Query(nativeQuery = true ,value = "SELECT date (md.update_at) as time, COUNT(md.id) as totalMission, SUM(m.money_received) as totalMoney FROM mission_detail md JOIN mission m ON md.mission_id = m.id WHERE md.status = 'COMPLETE' and  md.user_id = ?1 GROUP By date(md.update_at)" )
     Page<MissionDetailGroupByDay> getMissionDetailGroupByDay(Pageable pageable ,Long id) ;
 
 
