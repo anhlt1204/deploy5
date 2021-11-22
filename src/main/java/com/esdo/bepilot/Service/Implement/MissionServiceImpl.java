@@ -152,7 +152,7 @@ public class MissionServiceImpl implements MissionService {
     public ListMissionResponse searchMission(String name, String communication, int pageIndex, int pageSize) {
         ListMissionResponse response = new ListMissionResponse();
 
-        Pageable pageable = PageRequest.of(pageIndex, pageSize);
+        Pageable pageable = PageRequest.of(pageIndex - 1, pageSize, Sort.by("id"));
         Page<Mission> page = missionRepository.findAll(MissionSpecification.filterMission(name, communication), pageable);
         List<Mission> missions = page.getContent();
 
