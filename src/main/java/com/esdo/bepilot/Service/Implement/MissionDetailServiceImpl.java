@@ -47,6 +47,7 @@ public class MissionDetailServiceImpl implements MissionDetailService {
         Mission mission = missionRepository.findById(request.getMissionId()).get() ;
         missionDetail.setMission(mission);
         mission.getMissionDetails().add(missionDetail) ;
+        missionDetail.setNameMission(mission.getName());
         missionDetailRepository.save(missionDetail) ;
 //        missionDetailRepository.save(missionDetail) ;
         return null ;

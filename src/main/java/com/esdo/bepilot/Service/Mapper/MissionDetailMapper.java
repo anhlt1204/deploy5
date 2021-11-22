@@ -50,7 +50,6 @@ public class MissionDetailMapper {
         MissionDetail missionDetail = new MissionDetail() ;
 
         missionDetail.setStatus(request.getStatus());
-        missionDetail.setNameMission(request.getNameMission());
         return missionDetail ;
     }
 
