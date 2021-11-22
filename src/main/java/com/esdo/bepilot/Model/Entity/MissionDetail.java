@@ -34,7 +34,7 @@ public class MissionDetail {
     @Column(columnDefinition = "VARCHAR(20)")
     private String status;
 
-    @Column(columnDefinition = "VARCHAR(20)")
+    @Column(columnDefinition = "VARCHAR(255)")
     private String nameMission;
 
     @CreatedDate

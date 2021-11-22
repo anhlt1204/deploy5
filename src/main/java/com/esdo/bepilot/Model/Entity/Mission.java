@@ -1,7 +1,6 @@
 package com.esdo.bepilot.Model.Entity;
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
-import io.swagger.models.auth.In;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
@@ -12,7 +11,6 @@ import org.springframework.data.annotation.LastModifiedDate;
 import javax.persistence.*;
 import java.math.BigDecimal;
 import java.time.OffsetDateTime;
-import java.util.Date;
 import java.util.List;
 
 @Data
