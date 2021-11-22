@@ -1,20 +1,15 @@
 package com.esdo.bepilot.Service.Implement;
 
-import com.esdo.bepilot.Config.EmployeeSpecification;
 import com.esdo.bepilot.Exception.CustomException;
 import com.esdo.bepilot.Exception.InvalidException;
 import com.esdo.bepilot.Model.Entity.Customer;
-import com.esdo.bepilot.Model.Entity.Employee;
 import com.esdo.bepilot.Model.Entity.Mission;
-import com.esdo.bepilot.Model.Entity.User;
 import com.esdo.bepilot.Model.Request.MissionRequest;
 import com.esdo.bepilot.Model.Response.EmployeeResponse;
 import com.esdo.bepilot.Model.Response.ListMissionResponse;
 import com.esdo.bepilot.Model.Response.MissionResponse;
-import com.esdo.bepilot.Model.Response.UserResponse;
 import com.esdo.bepilot.Repository.CustomerRepository;
 import com.esdo.bepilot.Repository.MissionRepository;
-import com.esdo.bepilot.Service.Mapper.ConvertObject;
 import com.esdo.bepilot.Service.Mapper.MissionMapper;
 import com.esdo.bepilot.Service.MissionService;
 import com.esdo.bepilot.Service.Validate.MissionValidate;
@@ -108,7 +103,7 @@ public class MissionServiceImpl implements MissionService {
 
         Mission missionCreated = missionRepository.save(missions);
 
-       return missionMapper.mapToMissionResponse(missionCreated);
+        return missionMapper.mapToMissionResponse(missionCreated);
     }
 
 
@@ -192,9 +187,24 @@ public class MissionServiceImpl implements MissionService {
      * @return
      */
     @Override
-    public List<Mission> findByStatus(String status, Long customerId) {
-        List<MissionResponse> mission = missionRepository.findByStatus(status, customerId);
-        return missionMapper.map(mission);
+    public ListMissionResponse findByStatus(String status, Long customerId, int pageIndex, int pageSize) {
+        ListMissionResponse response = new ListMissionResponse();
+
+        Pageable pageable = PageRequest.of(pageIndex - 1, pageSize, Sort.by("id"));
+        Page<Mission> page = missionRepository.findAll(MissionSpecification.filterForMission(status, customerId), pageable);
+        List<Mission> missions = page.getContent();
+
+        List<MissionResponse> missionResponseList = new ArrayList<>();
+        for (Mission mission : missions) {
+            missionResponseList.add(missionMapper.mapToMissionResponse(mission));
+        }
+
+        response.setMissionResponseList(missionResponseList);
+        response.setPage(pageIndex);
+        response.setSize(pageSize);
+        response.setTotalPages(page.getTotalPages());
+        response.setTotalItems((int) page.getTotalElements());
+        return response;
     }
 
     /**

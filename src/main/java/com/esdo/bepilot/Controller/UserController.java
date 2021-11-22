@@ -37,6 +37,12 @@ public class UserController {
     @Autowired
     UserValidate userValidate;
 
+    /**
+     * lấy danh sách người dùng
+     * @param pageIndex
+     * @param pageSize
+     * @return
+     */
     @GetMapping(value = "/users")
     public ResponseEntity<List<UserResponse>> getAllUser(@RequestParam(value = "pageIndex", defaultValue = "0",
             required = false) int pageIndex,
@@ -53,6 +59,11 @@ public class UserController {
         return response;
     }
 
+    /**
+     * Thêm mới một người dùng
+     * @param request
+     * @return
+     */
     @PostMapping(value = "/users/add")
     public String createUser(@RequestBody UserRequest request) {
         log.info("Inside createUser of userAPI ");
@@ -61,12 +72,22 @@ public class UserController {
         return "Created Complete";
     }
 
+    /**
+     * Lấy chi tiết một người dùng theo id
+     * @param id
+     * @return
+     */
     @GetMapping(value = "users/{id}")
     public UserResponse getUserById(@PathVariable Long id) {
         log.info("Inside getUserById of userAPI ");
         return userService.getUserById(id);
     }
 
+    /**
+     * Lấy danh sách rút tiền của người dùng
+     * @param id
+     * @return
+     */
     @GetMapping(value = "users/{id}/withdrawn")
     public ResponseEntity<List<WithdrawnResponse>> getListHistoryWithdrawn(@RequestParam(value = "pageIndex", defaultValue = "0",
             required = false) int pageIndex,
@@ -86,6 +107,13 @@ public class UserController {
         return response;
     }
 
+    /**
+     * Chỉnh sử một khách hàng
+     * @param name
+     * @param phone
+     * @param id
+     * @return
+     */
     @PutMapping(value = "/users/{id}")
     public UserResponse updateUser(@RequestParam(name = "name") String name,
                                    @RequestParam(name = "phone") String phone,
@@ -95,6 +123,11 @@ public class UserController {
 
     }
 
+    /**
+     * Xóa thông tin một người dùng
+     * @param id
+     * @return
+     */
     @DeleteMapping(value = "/users/delete")
     public String deleteUser(@RequestParam Long id) {
         log.info("Inside deleteUser of userAPI ");
@@ -102,7 +135,12 @@ public class UserController {
         return "Delete completed";
     }
 
-    @GetMapping(value = "users/{id}/missiondetail")
+    /**
+     * lấy danh sách nhiệm vụ của người dùng
+     * @param id
+     * @return
+     */
+    @GetMapping(value = "users/{id}/missiondetails")
     public ResponseEntity<List<MissionDetailResponse>> getListMissionDetail(@PathVariable Long id,
                                                                             @RequestParam(name = "pageIndex",defaultValue = "0") int pageIndex,
                                                                             @RequestParam(name = "pageSize",defaultValue = "10") int pageSize) {
@@ -118,7 +156,12 @@ public class UserController {
         return response;
     }
 
-    @GetMapping(value = "users/{id}/missiondetail1")
+    /**
+     * Lấy danh sách nhiệm vụ của người dùng theo từng ngày
+     * @param id
+     * @return
+     */
+    @GetMapping(value = "users/{id}/missiondetail")
     public ResponseEntity<List<MissionDetailGroupByDay>> getListMissionDetailByDay(@PathVariable Long id,
                                                                                    @RequestParam(name = "pageIndex",defaultValue = "0") int pageIndex,
                                                                                    @RequestParam(name = "pageSize",defaultValue = "10") int pageSize) {

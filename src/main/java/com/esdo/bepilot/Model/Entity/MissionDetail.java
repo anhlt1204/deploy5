@@ -34,6 +34,9 @@ public class MissionDetail {
     @Column(columnDefinition = "VARCHAR(20)")
     private String status;
 
+    @Column(columnDefinition = "VARCHAR(20)")
+    private String nameMission;
+
     @CreatedDate
     @Column(columnDefinition = "timestamp default now()")
     private OffsetDateTime createAt;

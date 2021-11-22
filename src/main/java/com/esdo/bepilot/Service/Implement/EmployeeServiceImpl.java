@@ -61,6 +61,7 @@ public class EmployeeServiceImpl implements EmployeeService {
 //        UploadAvatar.upload(employeeRequest.getAvatar(), employee);
 
         employee.setAvatar(employeeRequest.getAvatar());
+
         Employee employeeSave = employeeRepository.save(employee);
 
         log.info(this.getClass().getName() + ": finish createNewEmployee");
@@ -76,8 +77,6 @@ public class EmployeeServiceImpl implements EmployeeService {
      */
     @Override
     public ListEmployeeResponse findAllEmployee(Integer page, Integer size, String key) {
-        List<Employee> sort = employeeRepository.findAllByOrderById();
-        employeeRepository.saveAll(sort);
         ListEmployeeResponse response = new ListEmployeeResponse();
         Page<Employee> employeePage = null;
         if (key == null) {
@@ -128,6 +127,8 @@ public class EmployeeServiceImpl implements EmployeeService {
      */
     @Override
     public EmployeeResponse editEmployeeById(Long id, EmployeeRequest request) {
+        List<Employee> sort = employeeRepository.findAllByOrderById();
+        employeeRepository.saveAll(sort);
         Optional<Employee> optionalEmployee = employeeRepository.findById(id);
         if (optionalEmployee.isEmpty()) {
             throw new InvalidException("Invalid employee has id = " + id);

@@ -18,6 +18,7 @@ public class MissionDetailResponse {
     private Long missionId;
     private Long userId;
     private String status;
+    private String nameMission ;
 
     private OffsetDateTime createAt;
 

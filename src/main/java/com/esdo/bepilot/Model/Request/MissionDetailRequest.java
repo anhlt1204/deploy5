@@ -16,4 +16,5 @@ public class MissionDetailRequest {
     private Long missionId;
     private Long userId;
     private String status;
+    private  String nameMission ;
 }

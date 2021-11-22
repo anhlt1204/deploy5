@@ -34,45 +34,6 @@ public class MissionMapper {
         return missionResponses;
     }
 
-    public List<Mission> map(List<MissionResponse> missionResponses) {
-        List<Mission> missions = new ArrayList<>();
-        missionResponses.forEach(missionResponse -> missions.add(mapToMissionStatus(missionResponse)));
-        return missions;
-    }
-
-    /**
-     * Map dữ liệu từ response sang entity
-     *
-     * @param missionResponse
-     * @return
-     */
-    private Mission mapToMissionStatus(MissionResponse missionResponse) {
-        Mission mission = new Mission();
-        if (Objects.equals(mission.getQuantity(), mission.getQuantityMade())) {
-            mission.setStatus(MissionStatus.COMPLETE.toString());
-        }
-        if (mission.getQuantityMade() != 0 && mission.getQuantityMade() < mission.getQuantity()) {
-            mission.setStatus(MissionStatus.RUNNING.toString());
-        }
-        mission.setMissionType(missionResponse.getMissionType());
-        mission.setCommunication(missionResponse.getCommunication());
-        mission.setId(missionResponse.getId());
-        mission.setKeyWord(missionResponse.getKeyWord());
-        mission.setLink(missionResponse.getLink());
-        mission.setName(missionResponse.getName());
-        mission.setMoneyReceived(missionResponse.getMoneyReceived());
-        mission.setPriceUnit(missionResponse.getPriceUnit());
-        mission.setQuantity(missionResponse.getQuantity());
-        mission.setQuantityMade(missionResponse.getQuantityMade());
-        if(!Objects.isNull(mission.getCustomer())){
-            missionResponse.setCompanyName(mission.getCustomer().getName());
-        }
-        if(!Objects.isNull(mission.getCustomer())){
-            missionResponse.setCustomerName(mission.getCustomer().getCompanyName());
-        }
-        return mission;
-    }
-
     /**
      * Map dữ liệu từ entity sang response
      *
@@ -112,7 +73,7 @@ public class MissionMapper {
         Mission mission = new Mission();
         mission.setCustomer(missionService.findCustomerById(missionRequest.getCustomerId()));
         mission.setId(missionRequest.getId());
-        mission.setStatus(MissionStatus.NOT_RUN.toString());
+        mission.setStatus(MissionStatus.getRandom().name());
         mission.setDeadTime(7);
         mission.setMissionType(missionRequest.getMissionType());
         mission.setCommunication(missionRequest.getCommunication());
@@ -122,7 +83,7 @@ public class MissionMapper {
         mission.setMoneyReceived(missionRequest.getMoneyReceived());
         mission.setPriceUnit(missionRequest.getPriceUnit());
         mission.setQuantity(missionRequest.getQuantity());
-        mission.setQuantityMade(missionRequest.getQuantityMade());
+        mission.setQuantityMade(0);
         mission.setMissionKey(missionRequest.getMissionKey());
         mission.setCreateAt(missionRequest.getCreateAt());
         return mission;

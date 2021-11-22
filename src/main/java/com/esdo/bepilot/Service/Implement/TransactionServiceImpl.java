@@ -16,6 +16,7 @@ import org.springframework.data.domain.PageRequest;
 import org.springframework.data.domain.Pageable;
 import org.springframework.stereotype.Service;
 
+import java.math.BigDecimal;
 import java.util.List;
 
 @Service
@@ -38,6 +39,7 @@ public class TransactionServiceImpl implements TransactionOfCustomerService {
         Customer customer = customerRepository.findById(request.getCustomerId()).get() ;
         transaction.setCustomer(customer);
         customer.getTransaction().add(transaction) ;
+        transaction.setMoneyRemaining(BigDecimal.valueOf(100000));
         transactionOfCustomerRepository.save(transaction) ;
         return null ;
     }

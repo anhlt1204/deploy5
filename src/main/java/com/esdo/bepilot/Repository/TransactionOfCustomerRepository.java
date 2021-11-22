@@ -13,6 +13,6 @@ import java.util.List;
 @Repository
 public interface TransactionOfCustomerRepository extends JpaRepository<TransactionOfCustomer, Long> {
 
-    @Query(value = "SELECT t FROM TransactionOfCustomer t where t.customer.id = ?1 and t.type = 'deposited'  ")
+    @Query(value = "SELECT t FROM TransactionOfCustomer t where t.customer.id = ?1 and t.type = 'DEPOSITED'  ")
     Page<TransactionOfCustomer> getTransactionOfCustomerByCustomerId(Pageable paging, Long id) ;
 }

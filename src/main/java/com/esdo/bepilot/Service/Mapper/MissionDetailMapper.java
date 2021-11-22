@@ -42,6 +42,7 @@ public class MissionDetailMapper {
         missionDetailResponse.setStatus(missionDetail.getStatus());
         missionDetailResponse.setCreateAt(missionDetail.getCreateAt());
         missionDetailResponse.setUpdateAt(missionDetail.getUpdateAt());
+        missionDetailResponse.setNameMission(missionDetail.getNameMission());
         return missionDetailResponse;
     }
 
@@ -49,6 +50,7 @@ public class MissionDetailMapper {
         MissionDetail missionDetail = new MissionDetail() ;
 
         missionDetail.setStatus(request.getStatus());
+        missionDetail.setNameMission(request.getNameMission());
         return missionDetail ;
     }
 

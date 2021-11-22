@@ -19,13 +19,13 @@ public interface MissionService {
     MissionResponse updateMissionById(Long missionId, MissionRequest missionRequest);
 
     ListMissionResponse searchMission(String name,
-                                        String communication,
-                                        int pageIndex,
-                                        int pageSize);
+                                      String communication,
+                                      int pageIndex,
+                                      int pageSize);
 
     Customer findCustomerById(Long id);
 
-    List<Mission> findByStatus(String status,Long customerId);
+    ListMissionResponse findByStatus(String status, Long customerId, int pageIndex, int pageSize);
 
     void deleteMissionById(Long missionId);
 

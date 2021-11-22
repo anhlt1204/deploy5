@@ -30,6 +30,12 @@ public class CustomerController {
     CustomerValidate customerValidate;
 
 
+    /**
+     * Lấy danh sách khách hàng
+     * @param pageIndex
+     * @param pageSize
+     * @return
+     */
     @GetMapping(value = "/customers")
     public ResponseEntity<List<CustomerResponse>> getAllCustomer(@RequestParam(value = "pageIndex", defaultValue = "0",
             required = false) int pageIndex,
@@ -47,6 +53,11 @@ public class CustomerController {
         return response;
     }
 
+    /**
+     * Thêm mới một khách hàng
+     * @param request
+     * @return
+     */
     @PostMapping(value = "/customers/add")
     public String createCustomer(@RequestBody @Valid CustomerRequest request) {
         log.info("Inside createCustomer of customerAPI ");
@@ -55,6 +66,11 @@ public class CustomerController {
         return "Created Complete";
     }
 
+    /**
+     * Lấy chi tiết một khách hàng theo id
+     * @param id
+     * @return
+     */
     @GetMapping(value = "customers/{id}")
     public CustomerResponse getCustomerById(@PathVariable Long id) {
         log.info("Inside getCustomerById of customerAPI ");
@@ -62,6 +78,11 @@ public class CustomerController {
         return customerResponse;
     }
 
+    /**
+     * lấy danh sách nạp tiền của một khách hàng
+     * @param id
+     * @return
+     */
     @GetMapping(value = "customers/{id}/deposited")
     public ResponseEntity<List<TransactionOfCustomerResponse>> getListHistoryDeposited(@RequestParam(value = "pageIndex", defaultValue = "0",
             required = false) int pageIndex,
@@ -81,6 +102,13 @@ public class CustomerController {
 
     }
 
+    /**
+     * Chỉnh sửa một khách hàng
+     * @param phone
+     * @param name
+     * @param id
+     * @return
+     */
     @PutMapping(value = "/customers/{id}")
     public String updateCustomer(@RequestParam(name = "phone") String phone,
                                            @RequestParam(name = "name") String name,
@@ -96,6 +124,11 @@ public class CustomerController {
         return "Update completed" ;
     }
 
+    /**
+     * xóa một khách hàng
+     * @param id
+     * @return
+     */
     @DeleteMapping(value = "/customers/delete")
     public String deleteCustomer(@RequestParam Long id) {
         log.info("Inside deleteCustomer of customerAPI ");
@@ -103,6 +136,13 @@ public class CustomerController {
         return "Delete Completed" ;
     }
 
+    /**
+     * tìm kiếm khách hàng
+     * @param pageIndex
+     * @param pageSize
+     * @param keyWord
+     * @return
+     */
     @GetMapping(value = "/customers/search")
     public ResponseEntity<List<CustomerResponse>> searchCustomer(@RequestParam(value = "pageIndex", defaultValue = "0",
             required = false) int pageIndex,
