@@ -9,6 +9,7 @@ import com.esdo.bepilot.Service.MissionService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
+import java.math.BigDecimal;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Objects;
@@ -81,7 +82,7 @@ public class MissionMapper {
         mission.setKeyWord(missionRequest.getKeyWord());
         mission.setLink(missionRequest.getLink());
         mission.setName(missionRequest.getName());
-        mission.setMoneyReceived(missionRequest.getMoneyReceived());
+        mission.setMoneyReceived(BigDecimal.valueOf(missionRequest.getPriceUnit().doubleValue() * missionRequest.getQuantity()));
         mission.setPriceUnit(missionRequest.getPriceUnit());
         mission.setQuantity(missionRequest.getQuantity());
         mission.setQuantityMade(0);
